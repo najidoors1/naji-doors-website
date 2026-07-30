@@ -18,12 +18,12 @@ export default function ProductsPage() {
         bgImage="/Images/Products Hero Background.png"
         breadcrumbs={[{ name: "المنتجات", href: "/products" }]}
       />
-      <div className="container mx-auto px-6 pt-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 md:px-6 pt-12 md:pt-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {products.map((product) => (
             <Link key={product.id} href={`/products/${product.slug}`} className="group block">
               <div className="bg-white rounded-2xl overflow-hidden luxury-card h-full flex flex-col">
-                <div className="relative h-80 w-full overflow-hidden bg-gray-100">
+                <div className="relative h-48 md:h-80 w-full overflow-hidden bg-gray-100">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -36,16 +36,16 @@ export default function ProductsPage() {
                   </div>
                 </div>
                 
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="text-xs text-gold font-bold mb-2 tracking-widest">{product.id}</div>
-                  <h2 className="text-2xl font-bold text-deep-brown mb-3">{product.name}</h2>
-                  <p className="text-gray-600 text-sm line-clamp-2 mb-4 flex-grow">
+                <div className="p-4 md:p-6 flex flex-col flex-grow">
+                  <div className="text-[10px] md:text-xs text-gold font-bold mb-1 md:mb-2 tracking-widest">{product.id}</div>
+                  <h2 className="text-lg md:text-2xl font-bold text-deep-brown mb-2 md:mb-3 line-clamp-1">{product.name}</h2>
+                  <p className="text-gray-600 text-xs md:text-sm line-clamp-2 mb-3 md:mb-4 flex-grow">
                     {product.description}
                   </p>
                   
-                  <div className="pt-4 border-t border-gray-100 flex items-center text-deep-brown font-medium group-hover:text-gold transition-colors">
+                  <div className="pt-3 md:pt-4 border-t border-gray-100 flex items-center text-xs md:text-base text-deep-brown font-medium group-hover:text-gold transition-colors">
                     عرض التفاصيل
-                    <svg className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                   </div>
                 </div>
               </div>

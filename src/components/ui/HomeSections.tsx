@@ -54,7 +54,7 @@ export default function HomeSections() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {/* Main Feature */}
-            <motion.div variants={fadeIn} className="md:col-span-2 bg-gradient-to-br from-white to-warm-beige border border-gold/30 rounded-3xl p-8 md:p-12 luxury-card relative overflow-hidden group shadow-md hover:shadow-lg transition-all">
+            <motion.div variants={fadeIn} className="md:col-span-2 bg-gradient-to-br from-white to-warm-beige border border-gold/30 rounded-3xl p-6 md:p-12 luxury-card relative overflow-hidden group shadow-md hover:shadow-lg transition-all">
               <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-700"></div>
               <Droplet className="w-12 h-12 text-gold mb-6" />
               <h3 className="text-2xl md:text-3xl font-bold text-deep-brown mb-4">مقاومة مطلقة للماء والرطوبة</h3>
@@ -64,7 +64,7 @@ export default function HomeSections() {
             </motion.div>
 
             {/* Side Feature 1 */}
-            <motion.div variants={fadeIn} className="bg-deep-brown text-white rounded-3xl p-8 luxury-card relative overflow-hidden group">
+            <motion.div variants={fadeIn} className="bg-deep-brown text-white rounded-3xl p-6 md:p-8 luxury-card relative overflow-hidden group">
               <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <VolumeX className="w-10 h-10 text-gold mb-6 relative z-10" />
               <h3 className="text-xl font-bold mb-3 relative z-10">عزل صوتي فائق</h3>
@@ -74,7 +74,7 @@ export default function HomeSections() {
             </motion.div>
 
             {/* Side Feature 2 */}
-            <motion.div variants={fadeIn} className="bg-gradient-to-br from-white to-warm-beige border border-gold/30 rounded-3xl p-8 luxury-card shadow-md hover:shadow-lg transition-all">
+            <motion.div variants={fadeIn} className="bg-gradient-to-br from-white to-warm-beige border border-gold/30 rounded-3xl p-6 md:p-8 luxury-card shadow-md hover:shadow-lg transition-all">
               <ShieldCheck className="w-10 h-10 text-gold mb-6" />
               <h3 className="text-xl font-bold text-deep-brown mb-3">ضد النمل الأبيض</h3>
               <p className="text-gray-600">
@@ -83,7 +83,7 @@ export default function HomeSections() {
             </motion.div>
 
             {/* Side Feature 3 */}
-            <motion.div variants={fadeIn} className="md:col-span-2 bg-gradient-to-l from-warm-beige via-white to-warm-beige border border-gold/30 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between text-center md:text-right gap-6 md:gap-0 luxury-card group cursor-pointer shadow-md hover:shadow-lg transition-all">
+            <motion.div variants={fadeIn} className="md:col-span-2 bg-gradient-to-l from-warm-beige via-white to-warm-beige border border-gold/30 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between text-center md:text-right gap-6 md:gap-0 luxury-card group cursor-pointer shadow-md hover:shadow-lg transition-all">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-deep-brown mb-2 group-hover:text-gold transition-colors">صناعة وتوريد للمشاريع الكبرى</h3>
                 <p className="text-gray-600">قدرة إنتاجية عالية لتلبية متطلبات المشاريع السكنية والتجارية.</p>
@@ -123,26 +123,26 @@ export default function HomeSections() {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
           >
             {featuredProducts.map((product) => (
               <motion.div key={product.id} variants={fadeIn} className="group cursor-pointer">
                 <Link href={`/products/${product.slug}`} className="block">
-                  <div className="relative h-[400px] w-full rounded-2xl overflow-hidden mb-4 bg-gray-100">
+                  <div className="relative h-48 md:h-[400px] w-full rounded-2xl overflow-hidden mb-3 md:mb-4 bg-gray-100">
                     <Image 
                       src={product.image}
                       alt={product.name}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-deep-brown/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute bottom-4 right-4 text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <div className="absolute bottom-4 right-4 text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hidden md:block">
                       <span className="font-bold border-b border-gold pb-1">عرض التفاصيل</span>
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-deep-brown group-hover:text-gold transition-colors">{product.name}</h3>
-                  <p className="text-sm text-gray-500 tracking-widest">{product.id}</p>
+                  <h3 className="text-base md:text-xl font-bold text-deep-brown group-hover:text-gold transition-colors line-clamp-1">{product.name}</h3>
+                  <p className="text-xs md:text-sm text-gray-500 tracking-widest">{product.id}</p>
                 </Link>
               </motion.div>
             ))}

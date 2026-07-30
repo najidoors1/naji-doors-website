@@ -31,8 +31,8 @@ export default function ProjectsPage() {
                  <h2 className="text-2xl font-bold">المشاريع السكنية</h2>
                </div>
             </div>
-            <div className="p-8">
-              <p className="text-gray-600 mb-6 leading-relaxed">
+            <div className="p-6 md:p-8">
+              <p className="text-sm md:text-base text-gray-600 mb-6 leading-relaxed">
                 توريد وتركيب أبواب داخلية لآلاف الفلل والقصور في أرقى أحياء الرياض (الملقا، الياسمين، حطين، النرجس). نوفر حلولاً تجمع بين الخصوصية التامة والعزل الصوتي مع تصاميم تعكس ذوق أصحابها الرفيع.
               </p>
               <ul className="space-y-2 mb-8 text-sm text-gray-500 font-medium">
@@ -58,8 +58,8 @@ export default function ProjectsPage() {
                  <h2 className="text-2xl font-bold">المشاريع التجارية</h2>
                </div>
             </div>
-            <div className="p-8">
-              <p className="text-gray-600 mb-6 leading-relaxed">
+            <div className="p-6 md:p-8">
+              <p className="text-sm md:text-base text-gray-600 mb-6 leading-relaxed">
                 شريك موثوق للمقاولين والمطورين العقاريين في مشاريع رؤية 2030. نوفر كميات كبيرة من الأبواب المقاومة للحريق والماء بأسعار تنافسية ومواعيد توريد دقيقة للمشاريع الضخمة في الرياض.
               </p>
               <ul className="space-y-2 mb-8 text-sm text-gray-500 font-medium">

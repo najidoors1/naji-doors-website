@@ -7,7 +7,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden pt-32 pb-40 md:pt-0 md:pb-0">
+    <section className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden pt-32 pb-10 md:pt-0 md:pb-0">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -20,7 +20,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-deep-brown/70 mix-blend-multiply" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-12 flex flex-col items-center justify-center text-center">
+      <div className="container relative z-10 mx-auto px-6 lg:px-12 flex flex-col items-center justify-center text-center flex-1 md:flex-none md:mt-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,9 +56,9 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Trust Badges - Absolute positioned at the bottom */}
+      {/* Trust Badges - Static on mobile, absolute on desktop */}
       <motion.div 
-        className="absolute bottom-4 md:bottom-8 left-0 right-0 z-10 px-4 md:px-6"
+        className="w-full mt-12 md:mt-0 md:absolute md:bottom-8 left-0 right-0 z-10 px-4 md:px-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5 }}

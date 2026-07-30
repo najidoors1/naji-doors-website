@@ -127,7 +127,7 @@ export default function Header({ initialHidden = false }: { initialHidden?: bool
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-white pt-24 pb-8 px-6 lg:hidden flex flex-col h-screen overflow-y-auto"
+            className="fixed inset-0 z-40 bg-white pt-24 pb-8 px-6 lg:hidden flex flex-col h-[100dvh] overflow-y-auto"
           >
             <nav className="flex flex-col gap-6 text-center">
               {navLinks.map((link) => {

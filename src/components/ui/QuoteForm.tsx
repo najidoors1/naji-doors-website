@@ -9,7 +9,7 @@ import { useForm as useHookForm } from "react-hook-form";
 const quoteSchema = z.object({
   name: z.string().min(2, { message: "الاسم يجب أن يحتوي على حرفين على الأقل" }),
   phone: z.string().regex(/^(05)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/, { message: "رقم الجوال غير صحيح (يجب أن يبدأ بـ 05)" }),
-  projectType: z.enum(["residential", "commercial", "other"], { required_error: "الرجاء اختيار نوع المشروع" }),
+  projectType: z.string().min(1, { message: "الرجاء اختيار نوع المشروع" }),
   quantity: z.string().min(1, { message: "الرجاء إدخال الكمية التقريبية" }),
   district: z.string().min(2, { message: "الرجاء إدخال الحي في الرياض" }),
   details: z.string().optional(),

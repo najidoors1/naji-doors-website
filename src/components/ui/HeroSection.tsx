@@ -7,7 +7,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden pt-32 pb-40 md:pt-0 md:pb-0">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -29,11 +29,11 @@ export default function HeroSection() {
           <span className="text-gold font-medium tracking-wider mb-4 block uppercase text-sm md:text-base">
             صُنعت للبيئة السعودية
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-md">
-            بوابة الفخامة <br />
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight drop-shadow-md">
+            بوابة الفخامة <br className="hidden sm:block" />
             <span className="text-light-cream font-light">لـ مشاريعك الراقية</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 md:mb-10 max-w-2xl mx-auto font-light leading-relaxed">
             أبواب WPC داخلية مقاومة للماء 100%، عازلة للصوت، ومصممة بأعلى معايير الجودة لتناسب أحدث تصاميم الفلل والقصور في الرياض.
           </p>
 
@@ -58,27 +58,27 @@ export default function HeroSection() {
 
       {/* Trust Badges - Absolute positioned at the bottom */}
       <motion.div 
-        className="absolute bottom-8 left-0 right-0 z-10 px-6"
+        className="absolute bottom-4 md:bottom-8 left-0 right-0 z-10 px-4 md:px-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5 }}
       >
-        <div className="max-w-4xl mx-auto bg-deep-brown/80 backdrop-blur-md rounded-2xl p-4 flex justify-around items-center border border-gold/20 shadow-xl">
+        <div className="max-w-4xl mx-auto bg-deep-brown/80 backdrop-blur-md rounded-2xl p-4 md:p-6 grid grid-cols-2 md:flex md:justify-around items-center gap-4 md:gap-0 border border-gold/20 shadow-xl">
            <div className="text-center">
-             <span className="block text-2xl font-bold text-white">100%</span>
+             <span className="block text-xl md:text-2xl font-bold text-white">100%</span>
              <span className="text-xs text-gray-300">مقاومة للماء</span>
            </div>
            <div className="text-center">
-             <span className="block text-2xl font-bold text-white">10</span>
-             <span className="text-xs text-gray-300">سنوات ضمان</span>
+             <span className="block text-xl md:text-2xl font-bold text-white">10</span>
+             <span className="text-xs md:text-sm text-gray-300">سنوات ضمان</span>
            </div>
            <div className="text-center">
-             <span className="block text-2xl font-bold text-gold">2030</span>
-             <span className="text-xs text-gray-300">رؤية المملكة</span>
+             <span className="block text-xl md:text-2xl font-bold text-gold">2030</span>
+             <span className="text-xs md:text-sm text-gray-300">رؤية المملكة</span>
            </div>
            <div className="text-center">
-             <span className="block text-2xl font-bold text-white">ZATCA</span>
-             <span className="text-xs text-gray-300">معتمد</span>
+             <span className="block text-xl md:text-2xl font-bold text-white">ZATCA</span>
+             <span className="text-xs md:text-sm text-gray-300">معتمد</span>
            </div>
         </div>
       </motion.div>

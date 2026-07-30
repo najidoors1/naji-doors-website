@@ -81,7 +81,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-right">
           <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} ناجي دورز للأبواب. جميع الحقوق محفوظة.
           </p>

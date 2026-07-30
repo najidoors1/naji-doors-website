@@ -59,7 +59,7 @@ export default function Header({ initialHidden = false }: { initialHidden?: bool
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 z-50 group">
-              <div className="relative w-40 h-14 transition-transform group-hover:scale-105">
+              <div className="relative w-32 h-10 md:w-40 md:h-14 transition-transform group-hover:scale-105">
                 <Image
                   src="/Images/Logo/Logo.png"
                   alt="مؤسسة ناجي دورز للأبواب"
@@ -137,7 +137,7 @@ export default function Header({ initialHidden = false }: { initialHidden?: bool
                     key={link.name} 
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-2xl font-bold border-b border-gray-100 pb-4 ${
+                    className={`text-xl md:text-2xl font-bold border-b border-gray-100 pb-4 ${
                       isActive ? "text-gold" : "text-deep-brown"
                     }`}
                   >

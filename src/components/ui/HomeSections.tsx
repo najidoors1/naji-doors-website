@@ -83,7 +83,7 @@ export default function HomeSections() {
             </motion.div>
 
             {/* Side Feature 3 */}
-            <motion.div variants={fadeIn} className="md:col-span-2 bg-gradient-to-l from-warm-beige via-white to-warm-beige border border-gold/30 rounded-3xl p-8 flex items-center justify-between luxury-card group cursor-pointer shadow-md hover:shadow-lg transition-all">
+            <motion.div variants={fadeIn} className="md:col-span-2 bg-gradient-to-l from-warm-beige via-white to-warm-beige border border-gold/30 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between text-center md:text-right gap-6 md:gap-0 luxury-card group cursor-pointer shadow-md hover:shadow-lg transition-all">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-deep-brown mb-2 group-hover:text-gold transition-colors">صناعة وتوريد للمشاريع الكبرى</h3>
                 <p className="text-gray-600">قدرة إنتاجية عالية لتلبية متطلبات المشاريع السكنية والتجارية.</p>
@@ -154,7 +154,7 @@ export default function HomeSections() {
       <section className="relative py-20 overflow-hidden bg-deep-brown text-white">
         <div className="absolute inset-0 bg-[url('/Images/Services%20Hero%20Background.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-x-reverse divide-white/20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 md:gap-8 text-center md:divide-x md:divide-x-reverse md:divide-white/20">
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}

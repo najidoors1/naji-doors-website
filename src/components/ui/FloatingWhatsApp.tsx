@@ -24,15 +24,15 @@ export default function FloatingWhatsApp({ initialHidden = false }: { initialHid
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.5, delay: 2 }}
-      className="fixed bottom-6 right-6 z-40"
+      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40"
     >
       <Link
         href="https://wa.me/966575650214"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center w-16 h-16 bg-green-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 relative group"
+        className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-green-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 relative group"
       >
-        <MessageCircle className="w-8 h-8" />
+        <MessageCircle className="w-6 h-6 md:w-8 md:h-8" />
         {/* Tooltip */}
         <span className="absolute right-full mr-4 bg-white text-deep-brown px-4 py-2 rounded-lg text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
           تواصل معنا عبر واتساب

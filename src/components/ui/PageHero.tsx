@@ -61,11 +61,11 @@ export default function PageHero({ title, description, bgImage, breadcrumbs }: P
             </ol>
           </nav>
 
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
             {title}
           </h1>
           <div className="w-24 h-1.5 bg-gold mx-auto mb-8 rounded-full shadow-lg"></div>
-          <p className="text-lg md:text-2xl text-gray-200 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-md">
+          <p className="text-base md:text-2xl text-gray-200 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-md">
             {description}
           </p>
         </motion.div>

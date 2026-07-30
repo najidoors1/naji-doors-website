@@ -18,8 +18,11 @@ export default function ParallaxImage({ offset = 50, className, ...props }: Para
 
   const y = useTransform(scrollYProgress, [0, 1], [-offset, offset]);
 
+  // Ensure the wrapper has some positioning context if not provided
+  const positionClass = className?.includes('absolute') || className?.includes('fixed') ? '' : 'relative';
+
   return (
-    <div ref={ref} className={`relative overflow-hidden ${className}`}>
+    <div ref={ref} className={`${positionClass} overflow-hidden ${className || ''}`}>
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
         <Image {...props} className="object-cover" />
       </motion.div>

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-beige: #f4f1ea;
+  --color-light-cream: #fdfbf7;
+  --color-natural-wood: #8b5a2b;
+  --color-deep-brown: #2c241b;
+  --color-gold: #c5a059;
+  
+  --font-sans: var(--font-tajawal), 'Inter', sans-serif;
+  
+  --shadow-luxury: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  :root {
+    --background: var(--color-light-cream);
+    --foreground: var(--color-deep-brown);
+  }
+
+  /* Typography Updates */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-elmessiri), sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  body {
+    font-family: var(--font-tajawal), sans-serif;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Base custom styles for Framer Motion or specific elements */
+.glass {
+  background: rgba(253, 251, 247, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.luxury-card {
+  box-shadow: var(--shadow-luxury);
+  border-radius: 1rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.luxury-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+}

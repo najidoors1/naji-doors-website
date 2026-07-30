@@ -76,7 +76,7 @@ export default async function ProductDetailsPage({ params }: Props) {
             </div>
 
             {/* Product Details */}
-            <div className="p-8 md:p-12 lg:p-16 flex flex-col">
+            <div className="p-6 md:p-10 lg:p-16 flex flex-col">
               <div className="inline-block bg-gold/10 text-gold font-bold px-4 py-1 rounded-full text-sm mb-4 self-start">
                 {product.category}
               </div>

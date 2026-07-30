@@ -64,7 +64,7 @@ export default function DownloadsPage() {
           {files.map((file) => {
             const Icon = file.icon;
             return (
-              <div key={file.id} className="bg-white rounded-3xl p-8 luxury-card flex flex-col h-full border border-gray-100 group">
+              <div key={file.id} className="bg-white rounded-3xl p-6 md:p-8 luxury-card flex flex-col h-full border border-gray-100 group">
                 <div className={`w-16 h-16 rounded-2xl ${file.bg} flex items-center justify-center mb-6 transition-transform group-hover:scale-110`}>
                   <Icon className={`w-8 h-8 ${file.color}`} />
                 </div>

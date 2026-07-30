@@ -122,13 +122,12 @@ export default function HomeSections() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-            className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
           >
             {featuredProducts.map((product) => (
               <motion.div key={product.id} variants={fadeIn} className="group cursor-pointer">
                 <Link href={`/products/${product.slug}`} className="block">
-                  <div className="relative h-48 md:h-[400px] w-full rounded-2xl overflow-hidden mb-3 md:mb-4 bg-gray-100">
+                  <div className="relative h-64 md:h-80 w-full rounded-2xl overflow-hidden mb-4 md:mb-5 bg-gray-100">
                     <Image 
                       src={product.image}
                       alt={product.name}
@@ -141,8 +140,8 @@ export default function HomeSections() {
                       <span className="font-bold border-b border-gold pb-1">عرض التفاصيل</span>
                     </div>
                   </div>
-                  <h3 className="text-base md:text-xl font-bold text-deep-brown group-hover:text-gold transition-colors line-clamp-1">{product.name}</h3>
-                  <p className="text-xs md:text-sm text-gray-500 tracking-widest">{product.id}</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-deep-brown group-hover:text-gold transition-colors">{product.name}</h3>
+                  <p className="text-sm md:text-base text-gray-500 tracking-widest mt-1">{product.id}</p>
                 </Link>
               </motion.div>
             ))}

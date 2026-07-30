@@ -62,7 +62,7 @@ export default function DownloadsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 group flex items-center justify-between border border-gray-100 hover:border-gold/50 cursor-pointer"
+                className="bg-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500 group flex items-center justify-between border border-gray-100 hover:border-gold/50 cursor-pointer"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-warm-beige group-hover:bg-gold/10 flex items-center justify-center transition-colors">

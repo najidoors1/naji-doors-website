@@ -24,7 +24,7 @@ export default function AdvantagesPage() {
           {companyData.advantages.map((advantage, index) => {
             const Icon = advantageIcons[index % advantageIcons.length];
             return (
-              <div key={index} className="bg-white p-8 rounded-2xl luxury-card text-center group hover:bg-deep-brown transition-colors duration-300">
+              <div key={index} className="bg-white p-6 md:p-8 rounded-2xl luxury-card text-center group hover:bg-deep-brown transition-colors duration-300">
                 <div className="w-20 h-20 mx-auto bg-warm-beige rounded-full flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
                   <Icon className="w-10 h-10 text-gold group-hover:text-white transition-colors" />
                 </div>
@@ -39,7 +39,7 @@ export default function AdvantagesPage() {
           })}
         </div>
 
-        <div className="mt-20 bg-deep-brown rounded-3xl p-12 text-center relative overflow-hidden">
+        <div className="mt-20 bg-deep-brown rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
            <div className="absolute inset-0 bg-gold/10 opacity-50 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/20 via-transparent to-transparent"></div>
            <div className="relative z-10">
              <h2 className="text-3xl font-bold text-white mb-6">مستعد لترقية أبواب مشروعك؟</h2>

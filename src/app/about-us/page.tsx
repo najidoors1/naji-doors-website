@@ -66,7 +66,7 @@ export default function AboutPage() {
 
         {/* Vision & Mission */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          <div className="bg-white rounded-3xl p-10 luxury-card text-center relative overflow-hidden group">
+          <div className="bg-white rounded-3xl p-6 md:p-10 luxury-card text-center relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-150 duration-700"></div>
             <Eye className="w-16 h-16 text-gold mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-deep-brown mb-6">رؤيتنا</h2>
@@ -75,7 +75,7 @@ export default function AboutPage() {
             </p>
           </div>
           
-          <div className="bg-white rounded-3xl p-10 luxury-card text-center relative overflow-hidden group">
+          <div className="bg-white rounded-3xl p-6 md:p-10 luxury-card text-center relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-32 h-32 bg-deep-brown/5 rounded-br-[100px] -z-10 transition-transform group-hover:scale-150 duration-700"></div>
             <Target className="w-16 h-16 text-deep-brown mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-deep-brown mb-6">رسالتنا</h2>
@@ -93,17 +93,17 @@ export default function AboutPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm text-center border-b-4 border-gold hover:-translate-y-2 transition-transform">
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm text-center border-b-4 border-gold hover:-translate-y-2 transition-transform">
               <Award className="w-12 h-12 text-gold mx-auto mb-4" />
               <h3 className="text-xl font-bold text-deep-brown mb-3">الجودة أولاً</h3>
               <p className="text-gray-600">لا نساوم أبداً على جودة المواد والخامات المستخدمة في أبوابنا وإكسسواراتها.</p>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm text-center border-b-4 border-deep-brown hover:-translate-y-2 transition-transform">
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm text-center border-b-4 border-deep-brown hover:-translate-y-2 transition-transform">
               <ShieldCheck className="w-12 h-12 text-deep-brown mx-auto mb-4" />
               <h3 className="text-xl font-bold text-deep-brown mb-3">الشفافية والمصداقية</h3>
               <p className="text-gray-600">الوضوح التام مع العميل في المواصفات، الأسعار، ومواعيد التسليم بلا أي مفاجآت.</p>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm text-center border-b-4 border-gold hover:-translate-y-2 transition-transform">
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm text-center border-b-4 border-gold hover:-translate-y-2 transition-transform">
               <CheckCircle2 className="w-12 h-12 text-gold mx-auto mb-4" />
               <h3 className="text-xl font-bold text-deep-brown mb-3">التطوير المستمر</h3>
               <p className="text-gray-600">البحث الدائم عن أحدث التقنيات والتصاميم لتوفير منتجات تسبق تطلعات السوق.</p>
@@ -112,7 +112,7 @@ export default function AboutPage() {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-br from-deep-brown to-black rounded-3xl p-12 text-center text-white relative overflow-hidden">
+        <div className="bg-gradient-to-br from-deep-brown to-black rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/Images/Home%20Hero%20Background.png')] bg-cover opacity-10 mix-blend-overlay"></div>
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">انضم إلى قائمة عملائنا المميزين</h2>

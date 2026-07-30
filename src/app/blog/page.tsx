@@ -35,7 +35,7 @@ export default function BlogIndexPage() {
                   />
                   <div className="absolute inset-0 bg-deep-brown/20 group-hover:bg-transparent transition-colors duration-500"></div>
                 </div>
-                <div className="p-8 flex flex-col flex-grow">
+                <div className="p-6 md:p-8 flex flex-col flex-grow">
                   <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
                     <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
                     <span className="flex items-center gap-1"><User className="w-3 h-3" /> {post.author}</span>

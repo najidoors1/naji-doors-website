@@ -22,7 +22,7 @@ export default function ContactPage() {
         <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
           {/* Contact Details & Map */}
           <div className="w-full lg:w-1/3 space-y-8">
-            <div className="bg-white p-8 rounded-2xl luxury-card">
+            <div className="bg-white p-6 md:p-8 rounded-2xl luxury-card">
               <h2 className="text-2xl font-bold text-deep-brown mb-6">معلومات التواصل</h2>
               
               <div className="space-y-6">

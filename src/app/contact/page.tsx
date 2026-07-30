@@ -5,7 +5,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "تواصل معنا | طلب تسعيرة - ناجي دورز",
-  description: "تواصل مع شركة ناجي دورز في الرياض لطلب تسعيرة لأبواب WPC أو الاستفسار عن خدمات التوريد والتركيب.",
+  description: "تواصل مع مؤسسة ناجي دورز في الرياض لطلب تسعيرة لأبواب WPC أو الاستفسار عن خدمات التوريد والتركيب.",
 };
 
 export default function ContactPage() {

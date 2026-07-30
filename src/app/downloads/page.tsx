@@ -31,7 +31,7 @@ export default function DownloadsPage() {
     },
     {
       id: "company-profile",
-      title: "الملف التعريفي للشركة (Profile)",
+      title: "الملف التعريفي للمؤسسة (Profile)",
       description: "تعرف على تاريخنا، رؤيتنا، واعتماداتنا في تنفيذ أضخم مشاريع الرياض.",
       icon: FileText,
       fileUrl: "/Files/الملف التعريفي ل  مؤسسه ناجي دورز للابواب ال wpc .pdf",

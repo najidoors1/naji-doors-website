@@ -21,7 +21,7 @@ export default function DownloadsSection() {
     },
     {
       id: "profile",
-      title: "ملف الشركة",
+      title: "ملف المؤسسة",
       desc: "نبذة عن ناجي دورز",
       icon: FileText,
       url: "/Files/الملف التعريفي ل  مؤسسه ناجي دورز للابواب ال wpc .pdf",

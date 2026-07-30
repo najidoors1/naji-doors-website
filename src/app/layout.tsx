@@ -21,7 +21,10 @@ const tajawal = Tajawal({
 
 export const metadata: Metadata = {
   title: "NAJI DOORS | أبواب WPC الفاخرة في الرياض",
-  description: "مصنع أبواب WPC في الرياض. توريد وتركيب أبواب WPC داخلية مقاومة للماء، عازلة للصوت، وضد النمل الأبيض للفلل والمشاريع الفاخرة.",
+  description: "الخيار الأول لأبواب WPC في المملكة العربية السعودية. جودة عالية، مقاومة للماء 100%، وتصاميم عصرية.",
+  icons: {
+    icon: "/Images/Logo/Logo.png",
+  },
 };
 
 export default async function RootLayout({

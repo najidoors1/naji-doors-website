@@ -18,7 +18,7 @@ export default function SeoSection() {
             className="space-y-6"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-deep-brown leading-tight">
-              أفضل شركة لتوريد وتركيب <span className="text-gold">أبواب WPC</span> في الرياض والمملكة
+              أفضل مؤسسة لتوريد وتركيب <span className="text-gold">أبواب WPC</span> في الرياض والمملكة
             </h2>
             <div className="w-20 h-1.5 bg-gold rounded-full"></div>
             
@@ -73,7 +73,7 @@ export default function SeoSection() {
             </div>
             <div className="space-y-4">
               <div className="h-64 rounded-3xl overflow-hidden shadow-lg border border-gray-100">
-                <img src="/Images/Services/IMG-20251127-WA0224.jpg" alt="أفضل شركة أبواب السعودية" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+                <img src="/Images/Services/IMG-20251127-WA0224.jpg" alt="أفضل مؤسسة أبواب السعودية" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
               </div>
               <div className="h-48 rounded-3xl overflow-hidden shadow-lg bg-deep-brown p-6 flex flex-col justify-center items-center text-center">
                 <span className="text-5xl font-bold text-gold mb-2">+5000</span>

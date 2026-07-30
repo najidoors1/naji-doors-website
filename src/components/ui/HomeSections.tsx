@@ -127,16 +127,16 @@ export default function HomeSections() {
             {featuredProducts.map((product) => (
               <motion.div key={product.id} variants={fadeIn} className="group cursor-pointer">
                 <Link href={`/products/${product.slug}`} className="block">
-                  <div className="relative h-64 md:h-80 w-full rounded-2xl overflow-hidden mb-4 md:mb-5 bg-gray-100">
+                  <div className="relative h-64 md:h-80 w-full rounded-2xl overflow-hidden mb-4 md:mb-5 bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-100 flex items-center justify-center p-6">
                     <Image 
                       src={product.image}
                       alt={product.name}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="object-contain p-4 group-hover:scale-110 transition-transform duration-700"
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-deep-brown/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute bottom-4 right-4 text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hidden md:block">
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-brown/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    <div className="absolute bottom-4 right-4 text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hidden md:block z-10 drop-shadow-md">
                       <span className="font-bold border-b border-gold pb-1">عرض التفاصيل</span>
                     </div>
                   </div>

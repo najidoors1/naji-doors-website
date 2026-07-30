@@ -64,13 +64,13 @@ export default async function ProductDetailsPage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             
             {/* Product Image */}
-            <div className="relative h-[500px] lg:h-auto bg-gray-100">
+            <div className="relative h-[500px] lg:h-[700px] bg-gradient-to-b from-gray-50 to-gray-100 luxury-card flex items-center justify-center p-8">
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
                 priority
-                className="object-cover"
+                className="object-contain p-4 lg:p-8 hover:scale-105 transition-transform duration-700"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
@@ -92,22 +92,22 @@ export default async function ProductDetailsPage({ params }: Props) {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 flex-grow">
                 <div>
-                  <h3 className="text-lg font-bold text-deep-brown mb-4">المميزات الرئيسية</h3>
+                  <h3 className="text-xl font-bold text-deep-brown mb-5 border-b border-gold/20 pb-2 inline-block">المواصفات والمميزات</h3>
                   <ul className="space-y-3">
                     {product.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{feature}</span>
+                        <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5 drop-shadow-sm" />
+                        <span className="text-gray-700 font-medium">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-bold text-deep-brown mb-4">الألوان والتشطيبات</h3>
+                  <h3 className="text-xl font-bold text-deep-brown mb-5 border-b border-gold/20 pb-2 inline-block">الألوان والتشطيبات</h3>
                   <div className="flex flex-wrap gap-2">
                     {product.finishes.map((finish, idx) => (
-                      <span key={idx} className="bg-warm-beige border border-gray-200 text-deep-brown px-4 py-2 rounded-lg text-sm font-medium">
+                      <span key={idx} className="bg-warm-beige border border-gold/30 text-deep-brown px-4 py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-gold hover:text-white transition-colors cursor-default">
                         {finish}
                       </span>
                     ))}
@@ -150,9 +150,19 @@ export default async function ProductDetailsPage({ params }: Props) {
             ],
             "description": product.description,
             "sku": product.id,
+            "category": product.category,
             "brand": {
               "@type": "Brand",
               "name": "Naji Doors"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "SAR",
+              "availability": "https://schema.org/InStock",
+              "seller": {
+                "@type": "Organization",
+                "name": "مؤسسة ناجي دورز للأبواب"
+              }
             }
           })
         }}

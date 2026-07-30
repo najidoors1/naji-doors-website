@@ -23,12 +23,12 @@ export default function ProductsPage() {
           {products.map((product) => (
             <Link key={product.id} href={`/products/${product.slug}`} className="group block">
               <div className="bg-white rounded-2xl overflow-hidden luxury-card h-full flex flex-col">
-                <div className="relative h-64 md:h-80 w-full overflow-hidden bg-gray-100">
+                <div className="relative h-64 md:h-80 w-full overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100 flex items-center justify-center p-6">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                    className="object-contain p-4 group-hover:scale-110 transition-transform duration-700 ease-in-out"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute top-4 right-4 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">

@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import ParallaxImage from "./ParallaxImage";
 
 interface PageHeroProps {
   title: string;
@@ -15,22 +15,19 @@ interface PageHeroProps {
 export default function PageHero({ title, description, bgImage, breadcrumbs }: PageHeroProps) {
   return (
     <section className="relative h-[65vh] min-h-[500px] w-full flex items-center justify-center overflow-hidden pt-24 pb-16">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={bgImage}
-          alt={title}
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        {/* Dark overlay for contrast */}
-        <div className="absolute inset-0 bg-deep-brown/80 mix-blend-multiply" />
-        
-        {/* Bottom Gradient Fade to match page background (bg-warm-beige is #f5f5dc usually, but let's just fade to transparent/base color) */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-warm-beige to-transparent" />
-      </div>
+      {/* Background Image with Parallax */}
+      <ParallaxImage 
+        src={bgImage}
+        alt={title}
+        fill
+        priority
+        className="absolute inset-0 z-0"
+        offset={80}
+      />
+      <div className="absolute inset-0 bg-deep-brown/80 mix-blend-multiply z-10" />
+
+      {/* Bottom Gradient Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-warm-beige to-transparent z-10" />
 
       <div className="container relative z-30 mx-auto px-6 flex flex-col items-center justify-center text-center">
         <motion.div

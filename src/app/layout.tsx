@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
+import CustomCursor from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 const elMessiri = El_Messiri({
@@ -42,6 +43,7 @@ export default async function RootLayout({
           <Footer />
         </div>
         <FloatingWhatsApp initialHidden={!hasVisited} />
+        <CustomCursor />
       </body>
     </html>
   );

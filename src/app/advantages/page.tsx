@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { companyData } from "@/data/content";
 import { Droplet, VolumeX, Bug, Paintbrush, Leaf } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "مميزات أبواب WPC | ناجي دورز",
@@ -24,17 +25,15 @@ export default function AdvantagesPage() {
           {companyData.advantages.map((advantage, index) => {
             const Icon = advantageIcons[index % advantageIcons.length];
             return (
-              <div key={index} className="bg-white p-6 md:p-8 rounded-2xl luxury-card text-center group hover:bg-deep-brown transition-colors duration-300">
+              <SpotlightCard key={index} className="bg-white p-6 md:p-8 rounded-2xl luxury-card text-center group hover:bg-deep-brown transition-colors duration-300">
                 <div className="w-20 h-20 mx-auto bg-warm-beige rounded-full flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
                   <Icon className="w-10 h-10 text-gold group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-2xl font-bold text-deep-brown mb-4 group-hover:text-gold transition-colors">
-                  {advantage.title}
-                </h3>
+                <h2 className="text-2xl font-bold text-deep-brown mb-4 group-hover:text-gold transition-colors">{advantage.title}</h2>
                 <p className="text-gray-600 group-hover:text-gray-300 transition-colors leading-relaxed">
                   {advantage.description}
                 </p>
-              </div>
+              </SpotlightCard>
             );
           })}
         </div>

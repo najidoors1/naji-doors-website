@@ -2,6 +2,7 @@ import SignatureIntro from "@/components/ui/SignatureIntro";
 import HeroSection from "@/components/ui/HeroSection";
 import SeoSection from "@/components/ui/SeoSection";
 import HomeSections from "@/components/ui/HomeSections";
+import DoorConfigurator from "@/components/ui/DoorConfigurator";
 import TestimonialsCarousel from "@/components/ui/TestimonialsCarousel";
 import DownloadsSection from "@/components/ui/DownloadsSection";
 
@@ -23,6 +24,8 @@ export default async function Home() {
       
       {/* Advanced animated Bento Grid & Showcase */}
       <HomeSections />
+
+      <DoorConfigurator />
 
       {/* Testimonials Section */}
       <section className="py-24 bg-light-cream relative border-t border-gray-200/50">

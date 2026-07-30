@@ -4,21 +4,22 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import ParallaxImage from "./ParallaxImage";
+import AnimatedCounter from "./AnimatedCounter";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden pt-32 pb-10 md:pt-0 md:pb-0">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/Images/Home Hero Background.png"
-          alt="أبواب WPC فاخرة في الرياض"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-deep-brown/70 mix-blend-multiply" />
-      </div>
+      {/* Background Image with Parallax */}
+      <ParallaxImage
+        src="/Images/Home Hero Background.png"
+        alt="أبواب WPC فاخرة في الرياض"
+        fill
+        priority
+        className="absolute inset-0 z-0"
+        offset={100}
+      />
+      <div className="absolute inset-0 bg-deep-brown/70 mix-blend-multiply z-10" />
 
       <div className="container relative z-10 mx-auto px-6 lg:px-12 flex flex-col items-center justify-center text-center flex-1 md:flex-none md:mt-0">
         <motion.div
@@ -65,15 +66,15 @@ export default function HeroSection() {
       >
         <div className="max-w-4xl mx-auto bg-deep-brown/80 backdrop-blur-md rounded-2xl p-4 md:p-6 grid grid-cols-2 md:flex md:justify-around items-center gap-4 md:gap-0 border border-gold/20 shadow-xl">
            <div className="text-center">
-             <span className="block text-xl md:text-2xl font-bold text-white">100%</span>
+             <AnimatedCounter to={100} suffix="%" className="block text-xl md:text-2xl font-bold text-white" />
              <span className="text-xs text-gray-300">مقاومة للماء</span>
            </div>
            <div className="text-center">
-             <span className="block text-xl md:text-2xl font-bold text-white">10</span>
+             <AnimatedCounter to={10} className="block text-xl md:text-2xl font-bold text-white" />
              <span className="text-xs md:text-sm text-gray-300">سنوات ضمان</span>
            </div>
            <div className="text-center">
-             <span className="block text-xl md:text-2xl font-bold text-gold">2030</span>
+             <AnimatedCounter from={2000} to={2030} className="block text-xl md:text-2xl font-bold text-gold" />
              <span className="text-xs md:text-sm text-gray-300">رؤية المملكة</span>
            </div>
            <div className="text-center">

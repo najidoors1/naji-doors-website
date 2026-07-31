@@ -5,6 +5,7 @@ import HomeSections from "@/components/ui/HomeSections";
 import DoorConfigurator from "@/components/ui/DoorConfigurator";
 import TestimonialsCarousel from "@/components/ui/TestimonialsCarousel";
 import DownloadsSection from "@/components/ui/DownloadsSection";
+import InfiniteMarquee from "@/components/ui/InfiniteMarquee";
 
 import { cookies } from "next/headers";
 
@@ -18,6 +19,8 @@ export default async function Home() {
       
       {/* Hero with parallax and animations */}
       <HeroSection />
+
+      <InfiniteMarquee />
 
       {/* SEO Optimized Section */}
       <SeoSection />

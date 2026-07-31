@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { El_Messiri, Tajawal } from "next/font/google";
 import { cookies } from "next/headers";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
+import MobileBottomNav from "@/components/ui/MobileBottomNav";
 import "./globals.css";
 
 const elMessiri = El_Messiri({
@@ -38,13 +40,16 @@ export default async function RootLayout({
     <html lang="ar" dir="rtl">
       <body className={`${tajawal.variable} ${elMessiri.variable} font-sans antialiased text-deep-brown bg-light-cream`}>
         <Header initialHidden={!hasVisited} />
-        <div className="flex flex-col min-h-screen">
-          <div className="flex-grow">
-            {children}
+        <SmoothScroll>
+          <div className="flex flex-col min-h-screen">
+            <div className="flex-grow">
+              {children}
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
+        </SmoothScroll>
         <FloatingWhatsApp initialHidden={!hasVisited} />
+        <MobileBottomNav />
       </body>
     </html>
   );

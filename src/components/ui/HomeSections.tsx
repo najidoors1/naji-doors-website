@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/content";
 import { ShieldCheck, Droplet, VolumeX, ArrowLeft, Star, Settings } from "lucide-react";
+import TiltCard from "./TiltCard";
 
 const fadeIn: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -127,7 +128,7 @@ export default function HomeSections() {
             {featuredProducts.map((product) => (
               <motion.div key={product.id} variants={fadeIn} className="group cursor-pointer">
                 <Link href={`/products/${product.slug}`} className="block">
-                  <div className="relative h-64 md:h-80 w-full rounded-2xl overflow-hidden mb-4 md:mb-5 bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-100 flex items-center justify-center p-6">
+                  <TiltCard className="relative h-64 md:h-80 w-full rounded-2xl overflow-hidden mb-4 md:mb-5 bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-100 flex items-center justify-center p-6">
                     <Image 
                       src={product.image}
                       alt={product.name}
@@ -139,7 +140,7 @@ export default function HomeSections() {
                     <div className="absolute bottom-4 right-4 text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hidden md:block z-10 drop-shadow-md">
                       <span className="font-bold border-b border-gold pb-1">عرض التفاصيل</span>
                     </div>
-                  </div>
+                  </TiltCard>
                   <h3 className="text-xl md:text-2xl font-bold text-deep-brown group-hover:text-gold transition-colors">{product.name}</h3>
                   <p className="text-sm md:text-base text-gray-500 tracking-widest mt-1">{product.id}</p>
                 </Link>

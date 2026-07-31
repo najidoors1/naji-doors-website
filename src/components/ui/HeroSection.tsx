@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import ParallaxImage from "./ParallaxImage";
 import AnimatedCounter from "./AnimatedCounter";
+import HeroParticles from "./HeroParticles";
 
 export default function HeroSection() {
   return (
@@ -20,7 +21,7 @@ export default function HeroSection() {
         offset={100}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#110e0d]/95 via-deep-brown/50 to-[#110e0d]/95 z-10" />
-
+      <HeroParticles />
 
       <div className="container relative z-10 mx-auto px-6 lg:px-12 flex flex-col items-center justify-center text-center flex-1 md:flex-none md:mt-0">
         <motion.div

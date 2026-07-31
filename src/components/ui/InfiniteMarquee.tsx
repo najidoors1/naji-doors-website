@@ -12,15 +12,15 @@ export default function InfiniteMarquee() {
     "جودة أوروبية",
   ];
 
-  // Quadruple for seamless loop on all screen sizes
+  // Quadruple for seamless loop
   const repeated = [...items, ...items, ...items, ...items];
 
   return (
-    <div className="w-full overflow-hidden bg-deep-brown py-4 md:py-5 select-none">
+    <div className="w-full overflow-hidden bg-deep-brown py-3 md:py-5 select-none">
       <div className="flex animate-marquee whitespace-nowrap">
         {repeated.map((item, idx) => (
-          <span key={idx} className="inline-flex items-center gap-3 mx-4 md:mx-10 text-sm md:text-base font-medium text-white/80 tracking-wider shrink-0">
-            <span className="text-gold text-lg">✦</span>
+          <span key={idx} className="inline-flex items-center gap-1.5 md:gap-4 mx-2 md:mx-10 text-xs md:text-base font-medium text-white/80 tracking-wider shrink-0">
+            <span className="text-gold text-sm md:text-lg">✦</span>
             {item}
           </span>
         ))}

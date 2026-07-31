@@ -19,7 +19,7 @@ export default function HeroSection() {
         className="absolute inset-0 z-0"
         offset={100}
       />
-      <div className="absolute inset-0 bg-deep-brown/70 mix-blend-multiply z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#110e0d]/95 via-deep-brown/50 to-[#110e0d]/95 z-10" />
 
       <div className="container relative z-10 mx-auto px-6 lg:px-12 flex flex-col items-center justify-center text-center flex-1 md:flex-none md:mt-0">
         <motion.div

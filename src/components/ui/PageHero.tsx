@@ -24,7 +24,7 @@ export default function PageHero({ title, description, bgImage, breadcrumbs }: P
         className="absolute inset-0 z-0"
         offset={80}
       />
-      <div className="absolute inset-0 bg-deep-brown/80 mix-blend-multiply z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#110e0d]/95 via-deep-brown/60 to-[#110e0d]/95 z-10" />
 
       {/* Bottom Gradient Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-warm-beige to-transparent z-10" />

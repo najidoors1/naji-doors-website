@@ -10,21 +10,21 @@ export default function DownloadsSection() {
       title: "كتالوج الأبواب",
       desc: "أحدث الموديلات",
       icon: BookOpen,
-      url: "/Files/كتالوج ابواب مؤسسه ناجي دورز.pdf",
+      url: "/Files/doors-catalog.pdf",
     },
     {
       id: "colors",
       title: "كتالوج الألوان",
       desc: "التشطيبات والدرجات",
       icon: Palette,
-      url: "/Files/كتالوج الوان مؤسسه ناجي دورز.pdf",
+      url: "/Files/colors-catalog.pdf",
     },
     {
       id: "profile",
       title: "ملف المؤسسة",
       desc: "نبذة عن ناجي دورز",
       icon: FileText,
-      url: "/Files/الملف التعريفي ل  مؤسسه ناجي دورز للابواب ال wpc .pdf",
+      url: "/Files/profile.pdf",
     },
   ];
 

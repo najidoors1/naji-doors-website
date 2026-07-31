@@ -75,29 +75,29 @@ export default function TestimonialsCarousel() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 50 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="luxury-card p-6 md:p-12 relative rounded-3xl shadow-lg mx-2 md:mx-0"
+          className="luxury-card p-4 sm:p-6 md:p-12 relative rounded-3xl shadow-lg mx-0 md:mx-0 bg-gradient-to-br from-white via-[#fdfbf7] to-gold/10"
         >
           <Quote className="absolute top-4 right-4 md:top-6 md:right-6 w-8 h-8 md:w-12 md:h-12 text-gold/20" />
           
-          <div className="flex gap-1 mb-4 md:mb-6 mt-2 md:mt-0">
+          <div className="flex gap-1 mb-3 md:mb-6 mt-6 md:mt-0">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-gold text-gold" />
+              <Star key={i} className="w-3.5 h-3.5 md:w-5 md:h-5 fill-gold text-gold" />
             ))}
           </div>
 
-          <p className="text-lg md:text-2xl text-deep-brown leading-relaxed font-medium mb-6 md:mb-8 min-h-[120px] md:min-h-[100px] flex items-center">
+          <p className="text-base sm:text-lg md:text-2xl text-deep-brown leading-relaxed font-medium mb-4 md:mb-8 min-h-[80px] md:min-h-[100px] flex items-center">
             "{testimonials[currentIndex].text}"
           </p>
 
-          <div className="flex items-center gap-3 md:gap-4">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold/20 flex shrink-0 items-center justify-center">
-              <span className="text-gold font-bold text-lg md:text-xl">
+          <div className="flex items-center gap-3 md:gap-4 mt-auto">
+            <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-gold/20 flex shrink-0 items-center justify-center">
+              <span className="text-gold font-bold text-base md:text-xl">
                 {testimonials[currentIndex].name.charAt(0)}
               </span>
             </div>
             <div>
-              <h4 className="font-bold text-deep-brown text-sm md:text-base">{testimonials[currentIndex].name}</h4>
-              <p className="text-xs md:text-sm text-gray-500">
+              <h4 className="font-bold text-deep-brown text-xs md:text-base">{testimonials[currentIndex].name}</h4>
+              <p className="text-[10px] md:text-sm text-gray-500">
                 {testimonials[currentIndex].role} — {testimonials[currentIndex].location}
               </p>
             </div>

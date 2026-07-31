@@ -23,7 +23,7 @@ export default function ParallaxImage({ offset = 50, className, ...props }: Para
 
   return (
     <div ref={ref} className={`${positionClass} overflow-hidden ${className || ''}`}>
-      <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%] -top-[10%] bg-deep-brown">
+      <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%] -top-[10%] bg-gradient-to-b from-[#110e0d] via-[#1f1917] to-[#110e0d]">
         <Image {...props} className="object-contain md:object-cover" />
       </motion.div>
     </div>

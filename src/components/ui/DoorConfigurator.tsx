@@ -9,19 +9,19 @@ const doorOptions = [
     id: "walnut",
     name: "جوز هند فاخر",
     color: "#3e2723",
-    image: "/Images/Products/Doors/a1c58aeae6bf838b90a2772a970c3a08.jpg",
+    image: "/Images/Products/Doors/حفر/ND-08.png",
   },
   {
     id: "oak",
     name: "بلوط فاتح",
     color: "#8d6e63",
-    image: "/Images/Products/Doors/d035935449a5a025cbd7ef6071d48579.webp.jpg",
+    image: "/Images/Products/Doors/بروز/ND-09.png",
   },
   {
     id: "white",
     name: "أبيض مودرن",
     color: "#f5f5f5",
-    image: "/Images/Products/Doors/0d29a84d8ff895843983b8b465d17698.webp.jpg",
+    image: "/Images/Products/Doors/ساده/ND-10.png",
   },
 ];
 

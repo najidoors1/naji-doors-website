@@ -73,7 +73,7 @@ export default function Footer() {
                 <div className="bg-white/10 p-2 rounded-lg text-gold"><Mail className="w-5 h-5" /></div>
                 <div>
                   <p className="text-sm text-gray-400 mb-1">البريد الإلكتروني</p>
-                  <p>info@najidoors.com</p>
+                  <p>Najidoors.ksa@gmail.com</p>
                 </div>
               </li>
             </ul>

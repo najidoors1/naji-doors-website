@@ -21,10 +21,76 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: "NAJI DOORS | أبواب WPC الفاخرة في الرياض",
-  description: "الخيار الأول لأبواب WPC في المملكة العربية السعودية. جودة عالية، مقاومة للماء 100%، وتصاميم عصرية.",
+  metadataBase: new URL("https://najidoor.com"),
+  title: {
+    default: "NAJI DOORS | أبواب WPC الفاخرة في الرياض - مؤسسة ناجي دورز",
+    template: "%s | ناجي دورز - أبواب WPC الرياض",
+  },
+  description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. أبواب مقاومة للماء 100%، عازلة للصوت، ومضادة للنمل الأبيض. ضمان 10 سنوات. توريد وتركيب احترافي لجميع أحياء الرياض.",
+  keywords: [
+    "أبواب WPC",
+    "أبواب WPC الرياض",
+    "ناجي دورز",
+    "أبواب مقاومة للماء",
+    "أبواب داخلية فاخرة",
+    "أبواب خشب بلاستيك",
+    "توريد أبواب الرياض",
+    "تركيب أبواب WPC",
+    "أبواب حمامات مقاومة للماء",
+    "أبواب فلل الرياض",
+    "أفضل أبواب WPC السعودية",
+    "أبواب عازلة للصوت",
+    "أبواب ضد النمل الأبيض",
+    "WPC doors Riyadh",
+    "Naji Doors",
+  ],
+  authors: [{ name: "مؤسسة ناجي دورز", url: "https://najidoor.com" }],
+  creator: "مؤسسة ناجي دورز",
+  publisher: "مؤسسة ناجي دورز",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: "/Images/Logo/Logo.png",
+    apple: "/Images/Logo/Logo.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ar_SA",
+    url: "https://najidoor.com",
+    siteName: "ناجي دورز | NAJI DOORS",
+    title: "NAJI DOORS | أبواب WPC الفاخرة في الرياض",
+    description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، ضمان 10 سنوات.",
+    images: [
+      {
+        url: "/Images/Logo/Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "ناجي دورز - أبواب WPC فاخرة في الرياض",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NAJI DOORS | أبواب WPC الفاخرة في الرياض",
+    description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، ضمان 10 سنوات.",
+    images: ["/Images/Logo/Logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://najidoor.com",
   },
 };
 
@@ -39,6 +105,34 @@ export default async function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className={`${tajawal.variable} ${elMessiri.variable} font-sans antialiased text-deep-brown bg-light-cream`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "مؤسسة ناجي دورز",
+              alternateName: "NAJI DOORS",
+              url: "https://najidoor.com",
+              logo: "https://najidoor.com/Images/Logo/Logo.png",
+              description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، ضمان 10 سنوات.",
+              email: "najidoors.ksa@gmail.com",
+              telephone: "+966575650214",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "الرياض",
+                addressCountry: "SA",
+              },
+              areaServed: {
+                "@type": "City",
+                name: "الرياض",
+              },
+              sameAs: [
+                "https://wa.me/966565757574",
+              ],
+            }),
+          }}
+        />
         <Header initialHidden={!hasVisited} />
         <SmoothScroll>
           <div className="flex flex-col min-h-screen">

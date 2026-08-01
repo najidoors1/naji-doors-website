@@ -52,7 +52,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-deep-brown mb-1">البريد الإلكتروني</h3>
-                    <p className="text-gray-600" dir="ltr">Najidoors.ksa@gmail.com</p>
+                    <p className="text-gray-600" dir="ltr">najidoors.ksa@gmail.com</p>
                   </div>
                 </div>
               </div>

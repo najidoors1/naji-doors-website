@@ -30,17 +30,34 @@ export default function QuoteForm() {
     resolver: zodResolver(quoteSchema),
   });
 
+  const [submitError, setSubmitError] = useState("");
+
   const onSubmit = async (data: QuoteFormValues) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Form submitted:", data);
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    reset();
+    setSubmitError("");
     
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSuccess(false), 5000);
+    try {
+      const response = await fetch("https://formspree.io/f/xlgqyprn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        reset();
+        // Reset success message after 5 seconds
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        setSubmitError("حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.");
+      }
+    } catch (error) {
+      setSubmitError("حدث خطأ في الاتصال. يرجى التأكد من اتصالك بالإنترنت.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -130,6 +147,12 @@ export default function QuoteForm() {
               placeholder="أضف أي تفاصيل أخرى ترغب في مشاركتها..."
             ></textarea>
           </div>
+
+          {submitError && (
+            <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm font-medium text-center">
+              {submitError}
+            </div>
+          )}
 
           <button
             type="submit"

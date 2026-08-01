@@ -14,7 +14,7 @@ export default function DownloadsPage() {
       title: "كتالوج أبواب WPC 2024",
       description: "استعرض أحدث تصاميم وموديلات الأبواب الداخلية الفاخرة للغرف والحمامات.",
       icon: BookOpen,
-      fileUrl: "/Files/كتالوج ابواب مؤسسه ناجي دورز.pdf",
+      fileUrl: "/Files/doors-catalog.pdf",
       color: "text-blue-500",
       bg: "bg-blue-500/10",
       size: "15 MB"
@@ -24,7 +24,7 @@ export default function DownloadsPage() {
       title: "كتالوج الألوان والتشطيبات",
       description: "دليل شامل لجميع الألوان المتاحة لتتناسب مع ديكور مشروعك.",
       icon: Palette,
-      fileUrl: "/Files/كتالوج الوان مؤسسه ناجي دورز.pdf",
+      fileUrl: "/Files/colors-catalog.pdf",
       color: "text-purple-500",
       bg: "bg-purple-500/10",
       size: "8 MB"
@@ -34,7 +34,7 @@ export default function DownloadsPage() {
       title: "الملف التعريفي للمؤسسة (Profile)",
       description: "تعرف على تاريخنا، رؤيتنا، واعتماداتنا في تنفيذ أضخم مشاريع الرياض.",
       icon: FileText,
-      fileUrl: "/Files/الملف التعريفي ل  مؤسسه ناجي دورز للابواب ال wpc .pdf",
+      fileUrl: "/Files/profile.pdf",
       color: "text-gold",
       bg: "bg-gold/10",
       size: "12 MB"

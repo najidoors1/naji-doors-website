@@ -7,6 +7,7 @@ import { ArrowLeft } from "lucide-react";
 import ParallaxImage from "./ParallaxImage";
 import AnimatedCounter from "./AnimatedCounter";
 import HeroParticles from "./HeroParticles";
+import SplitText from "./SplitText";
 
 export default function HeroSection() {
   return (
@@ -32,10 +33,12 @@ export default function HeroSection() {
           <span className="text-gold font-medium tracking-wider mb-4 block uppercase text-sm md:text-base">
             صُنعت للبيئة السعودية
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight drop-shadow-md">
-            بوابة الفخامة <br className="hidden sm:block" />
-            <span className="text-light-cream font-light">لـ مشاريعك الراقية</span>
+          
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight drop-shadow-md flex flex-col items-center justify-center">
+            <SplitText text="بوابة الفخامة" delayOffset={0.6} className="justify-center" />
+            <SplitText text="لـ مشاريعك الراقية" delayOffset={1.2} className="text-light-cream font-light justify-center mt-2" />
           </h1>
+
           <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 md:mb-10 max-w-2xl mx-auto font-light leading-relaxed">
             أبواب WPC داخلية مقاومة للماء 100%، عازلة للصوت، ومصممة بأعلى معايير الجودة لتناسب أحدث تصاميم الفلل والقصور في الرياض.
           </p>
@@ -43,7 +46,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
               href="/products" 
-              className="group flex items-center gap-3 bg-gold hover:bg-yellow-600 text-deep-brown px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
+              className="group flex items-center gap-3 bg-gold hover:bg-yellow-600 text-deep-brown px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-xl w-full sm:w-auto justify-center shimmer-button"
             >
               استعرض الكتالوج
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />

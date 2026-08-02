@@ -110,12 +110,13 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "مؤسسة ناجي دورز",
+              "@type": "HomeAndConstructionBusiness",
+              name: "مؤسسة ناجي دورز للأبواب",
               alternateName: "NAJI DOORS",
               url: "https://najidoor.com",
               logo: "https://najidoor.com/Images/Logo/Logo.png",
-              description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، ضمان 10 سنوات.",
+              image: "https://najidoor.com/Images/wpc-doors-riyadh-home-hero.png",
+              description: "شركة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، عازلة للصوت، ومضادة للنمل الأبيض. ضمان 10 سنوات.",
               email: "najidoors.ksa@gmail.com",
               telephone: "+966575650214",
               address: {
@@ -123,6 +124,22 @@ export default async function RootLayout({
                 addressLocality: "الرياض",
                 addressCountry: "SA",
               },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 24.7136,
+                longitude: 46.6753
+              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"
+                  ],
+                  opens: "08:00",
+                  closes: "22:00"
+                }
+              ],
+              priceRange: "$$",
               areaServed: {
                 "@type": "City",
                 name: "الرياض",

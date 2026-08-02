@@ -76,6 +76,33 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </div>
+      {/* JSON-LD for Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "image": [
+              `https://najidoor.com${post.image}`
+            ],
+            "datePublished": post.date,
+            "author": [{
+              "@type": "Person",
+              "name": post.author
+            }],
+            "publisher": {
+              "@type": "Organization",
+              "name": "مؤسسة ناجي دورز للأبواب",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://najidoor.com/Images/Logo/Logo.png"
+              }
+            }
+          })
+        }}
+      />
     </main>
   );
 }

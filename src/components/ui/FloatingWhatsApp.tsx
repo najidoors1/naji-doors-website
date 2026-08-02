@@ -32,7 +32,7 @@ export default function FloatingWhatsApp({ initialHidden = false }: { initialHid
       className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40"
     >
       <Link
-        href="https://wa.me/966575650214"
+        href="https://wa.me/966575650214?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%A8%D9%88%D8%A7%D8%A8%20WPC%20%D9%85%D9%86%20%D9%86%D8%A7%D8%AC%D9%8A%20%D8%AF%D9%88%D8%B1%D8%B2"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-green-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 relative group"

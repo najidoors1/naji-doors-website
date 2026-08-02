@@ -123,7 +123,7 @@ export default async function ProductDetailsPage({ params }: Props) {
                   طلب تسعيرة
                 </Link>
                 <Link 
-                  href="https://wa.me/966575650214" 
+                  href="https://wa.me/966575650214?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%A8%D9%88%D8%A7%D8%A8%20WPC%20%D9%85%D9%86%20%D9%86%D8%A7%D8%AC%D9%8A%20%D8%AF%D9%88%D8%B1%D8%B2" 
                   target="_blank"
                   className="flex-1 bg-green-500 hover:bg-green-600 text-white flex items-center justify-center gap-2 py-4 rounded-xl font-bold transition-colors"
                 >

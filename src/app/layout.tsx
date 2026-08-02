@@ -145,7 +145,7 @@ export default async function RootLayout({
                 name: "الرياض",
               },
               sameAs: [
-                "https://wa.me/966565757574",
+                "https://wa.me/966575650214",
               ],
             }),
           }}

@@ -29,7 +29,7 @@ export default function MobileBottomNav() {
     { icon: LayoutGrid, label: "المنتجات", href: "/products" },
     { icon: Phone, label: "تواصل", href: "/contact" },
     { icon: Download, label: "التحميلات", href: "/downloads" },
-    { icon: WhatsAppIcon, label: "واتساب", href: "https://wa.me/966565757574", external: true },
+    { icon: WhatsAppIcon, label: "واتساب", href: "https://wa.me/966575650214?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%A8%D9%88%D8%A7%D8%A8%20WPC%20%D9%85%D9%86%20%D9%86%D8%A7%D8%AC%D9%8A%20%D8%AF%D9%88%D8%B1%D8%B2", external: true },
   ];
 
   if (!isVisible) return null;

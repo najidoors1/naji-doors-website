@@ -13,7 +13,7 @@ export default function HeroSection() {
     <section className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden pt-32 pb-10 md:pt-0 md:pb-0">
       {/* Background Image with Parallax */}
       <ParallaxImage
-        src="/Images/Home Hero Background.png"
+        src="/Images/wpc-doors-riyadh-home-hero.png"
         alt="أبواب WPC فاخرة في الرياض"
         fill
         priority

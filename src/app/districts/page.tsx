@@ -16,7 +16,7 @@ export default function DistrictsIndexPage() {
       <PageHero 
         title="مناطق التغطية بالرياض"
         description="نغطي كافة أحياء الرياض بخدمات توريد وتركيب أبواب WPC بأعلى معايير الجودة."
-        bgImage="/Images/districts Hero Background.png"
+        bgImage="/Images/wpc-doors-riyadh-districts-hero.png"
         breadcrumbs={[{ name: "مناطق التغطية", href: "/districts" }]}
       />
       

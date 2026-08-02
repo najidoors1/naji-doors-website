@@ -46,7 +46,7 @@ export default function DownloadsPage() {
       <PageHero 
         title="مركز التحميلات"
         description="جميع الملفات والكتالوجات التي تحتاجها لاتخاذ القرار الأفضل لمشروعك متاحة للتحميل المباشر."
-        bgImage="/Images/Products Hero Background.png"
+        bgImage="/Images/wpc-doors-riyadh-products-hero.png"
         breadcrumbs={[{ name: "التحميلات", href: "/downloads" }]}
       />
       

@@ -6,7 +6,7 @@ export const districts = [
     title: "أبواب WPC في حي الملقا | تركيب وتوريد ناجي دورز",
     description: "أفضل خدمات توريد وتركيب أبواب WPC الفاخرة للفلل والقصور في حي الملقا بالرياض. أبواب مقاومة للماء وعازلة للصوت.",
     content: "نحن في ناجي دورز نفتخر بتقديم خدمات توريد وتركيب أبواب WPC لعملائنا في حي الملقا الراقي. نعلم أن تصميم الفلل في الملقا يتطلب مستوى عالياً من الفخامة والجودة، لذلك نوفر أحدث التصاميم التي تلبي هذه التطلعات.",
-    image: "/Images/Region/حي الملقا.png",
+    image: "/Images/Region/wpc-doors-riyadh-al-malqa-district.png",
     projectsCount: 45
   },
   {
@@ -16,7 +16,7 @@ export const districts = [
     title: "أبواب WPC في حي الياسمين | تصاميم عصرية",
     description: "تركيب أبواب WPC في حي الياسمين شمال الرياض. تصاميم مودرن وكلاسيك بأسعار تنافسية وضمان 10 سنوات.",
     content: "سكان حي الياسمين يبحثون دائماً عن الجودة العالية والتصاميم العصرية. تشكيلتنا الواسعة من أبواب WPC توفر حلولاً مثالية للغرف والحمامات مقاومة للماء 100%.",
-    image: "/Images/Region/حي الياسمين.png",
+    image: "/Images/Region/wpc-doors-riyadh-al-yasmin-district.png",
     projectsCount: 38
   },
   {
@@ -26,7 +26,7 @@ export const districts = [
     title: "أبواب فاخرة WPC في حي حطين | ناجي دورز",
     description: "ارتق بمستوى مشروعك في حي حطين مع أبواب ناجي دورز WPC العازلة للصوت. خدمة كبار الشخصيات VIP.",
     content: "حي حطين يعتبر من أرقى أحياء الرياض، ومشاريعنا هناك تشهد على التزامنا بأعلى معايير الجودة والفخامة. أبوابنا المحفورة والمودرن تلبي ذوق أصحاب القصور والفلل الحديثة.",
-    image: "/Images/Region/حي حطين.png",
+    image: "/Images/Region/wpc-doors-riyadh-hittin-district.png",
     projectsCount: 52
   },
   {
@@ -36,7 +36,7 @@ export const districts = [
     title: "أبواب WPC في حي النرجس | عروض خاصة للمشاريع",
     description: "نوفر في ناجي دورز أبواب خشبية بلاستيكية WPC لمشاريع الفلل في حي النرجس. مقاومة للرطوبة والنمل الأبيض.",
     content: "مع التوسع العمراني في حي النرجس، تزداد الحاجة لأبواب عملية تدوم طويلاً ولا تحتاج لصيانة. أبواب WPC هي الخيار الأول للمطورين العقاريين في حي النرجس لضمان استدامة المشاريع.",
-    image: "/Images/Region/حي النرجس.png",
+    image: "/Images/Region/wpc-doors-riyadh-an-narjis-district.png",
     projectsCount: 65
   },
   {
@@ -46,7 +46,7 @@ export const districts = [
     title: "تركيب أبواب WPC للمكاتب والمشاريع في العليا",
     description: "حلول الأبواب العازلة للصوت المخصصة للمكاتب والمباني التجارية في حي العليا وسط الرياض.",
     content: "حي العليا هو القلب التجاري النابض للرياض. نحن نوفر أبواب WPC للمكاتب والشركات في العليا تتميز بعزل صوتي ممتاز يوفر الخصوصية وبيئة عمل هادئة.",
-    image: "/Images/Region/حي العليا.png",
+    image: "/Images/Region/wpc-doors-riyadh-al-olaya-district.png",
     projectsCount: 30
   },
   {
@@ -56,7 +56,7 @@ export const districts = [
     title: "أبواب WPC في الصحافة | تصاميم كلاسيك ومودرن",
     description: "خدمات توريد وتركيب أبواب WPC في حي الصحافة بالرياض. تواصل معنا للحصول على مقاسات وتصاميم مخصصة.",
     content: "لمالكي المنازل في حي الصحافة، نقدم مجموعة حصرية من الأبواب العصرية. فريقنا الفني مستعد لأخذ المقاسات بدقة وتقديم استشارة مجانية في موقعك.",
-    image: "/Images/Region/حي الصحافه.png",
+    image: "/Images/Region/wpc-doors-riyadh-as-sahafah-district.png",
     projectsCount: 22
   },
   {
@@ -66,7 +66,7 @@ export const districts = [
     title: "أبواب WPC فاخرة في حي الربيع | أسعار منافسة",
     description: "ابواب دبليو بي سي ضد الماء والرمة في حي الربيع. تصفح كتالوج ناجي دورز واطلب تسعيرتك الآن.",
     content: "تعتبر الرطوبة في الحمامات من أكبر مشاكل الأبواب الخشبية. في حي الربيع، قمنا بحل هذه المشكلة للعديد من العملاء من خلال استبدال أبوابهم بأبواب WPC مضادة للماء بالكامل.",
-    image: "/Images/Region/حي الربيع.png",
+    image: "/Images/Region/wpc-doors-riyadh-ar-rabi-district.png",
     projectsCount: 18
   },
   {
@@ -76,7 +76,7 @@ export const districts = [
     title: "أبواب WPC في قرطبة | ناجي دورز للفلل السكنية",
     description: "مؤسسة ناجي دورز تلبي احتياجات حي قرطبة لأبواب الغرف والحمامات العصرية بضمان 10 سنوات.",
     content: "يتميز حي قرطبة بتصاميم الفلل الهادئة والعصرية. أبوابنا الملساء ذات الألوان البيضاء والخشبية الفاتحة تعتبر الخيار المفضل لعملائنا هناك.",
-    image: "/Images/Region/حي قرطبه.png",
+    image: "/Images/Region/wpc-doors-riyadh-qurtubah-district.png",
     projectsCount: 27
   },
   {
@@ -86,7 +86,7 @@ export const districts = [
     title: "أبواب WPC بالرياض حي النفل | توريد وتركيب",
     description: "خدمات تركيب احترافية لأبواب الـ WPC في حي النفل. احجز موعد لرفع المقاسات مجاناً.",
     content: "نحرص في ناجي دورز على أن تكون تجربة شراء الأبواب في حي النفل تجربة مريحة وخالية من المتاعب. من مرحلة اختيار التصميم إلى التركيب النهائي والتنظيف.",
-    image: "/Images/Region/حي النفل.png",
+    image: "/Images/Region/wpc-doors-riyadh-an-nafl-district.png",
     projectsCount: 15
   },
   {
@@ -96,7 +96,7 @@ export const districts = [
     title: "أبواب WPC في حي الرائد | أمان وفخامة",
     description: "كتالوج أبواب WPC الأحدث لعام 2024 متوفر الآن في حي الرائد بالرياض عبر ناجي دورز.",
     content: "لكل عميل في حي الرائد يبحث عن الجمع بين صلابة الأبواب وأناقة التصميم، نقدم لكم أبواب WPC بوزنها الثقيل ومفصلاتها عالية الجودة لتدوم طويلاً.",
-    image: "/Images/Region/حي الرائد.png",
+    image: "/Images/Region/wpc-doors-riyadh-ar-raid-district.png",
     projectsCount: 20
   },
   {
@@ -106,7 +106,7 @@ export const districts = [
     title: "أبواب WPC في حي العقيق | ضمان الجودة",
     description: "أبواب دبليو بي سي عالية الجودة في حي العقيق شمال الرياض. مقاومة تامة للماء وعزل صوتي ممتاز بأسعار تنافسية.",
     content: "لدينا في ناجي دورز خبرة طويلة في تلبية احتياجات سكان حي العقيق. نتميز بتوفير أبواب تتناسب مع تصاميم الفلل العصرية، مع توفير ألوان خشبية طبيعية لا تتغير مع مرور الزمن.",
-    image: "/Images/Region/حي العقيق.png",
+    image: "/Images/Region/wpc-doors-riyadh-al-aqiq-district.png",
     projectsCount: 34
   },
   {
@@ -116,7 +116,7 @@ export const districts = [
     title: "أبواب WPC الفاخرة في حي الندى | ناجي دورز",
     description: "توريد وتركيب أبواب WPC عازلة للصوت والحرارة في حي الندى. اختر الفخامة لمشروعك الآن.",
     content: "يعتبر حي الندى من الأحياء التي تتطلب تشطيبات داخلية راقية. أبوابنا المحفورة بالليزر والمزودة بمفصلات ومقابض أوروبية تعتبر الإضافة المثالية لأي مشروع فخم في المنطقة.",
-    image: "/Images/Region/حي الندي.png",
+    image: "/Images/Region/wpc-doors-riyadh-an-nada-district.png",
     projectsCount: 21
   },
   {
@@ -126,7 +126,7 @@ export const districts = [
     title: "تركيب أبواب WPC في المونسية | أسعار اقتصادية للفلل",
     description: "أبواب خشب بلاستيكي WPC لفلل ومشاريع المونسية. متانة عالية وعمر افتراضي طويل بدون الحاجة لصيانة مستمرة.",
     content: "مع التوسع الكبير في حي المونسية، يسعدنا أن نكون المورد الأول لأبواب WPC في المنطقة. أبوابنا تقدم حلاً اقتصادياً وعملياً على المدى الطويل نظراً لعدم حاجتها للصيانة.",
-    image: "/Images/Region/حي المنوسيه.png",
+    image: "/Images/Region/wpc-doors-riyadh-al-munsiyah-district.png",
     projectsCount: 42
   },
   {
@@ -136,7 +136,7 @@ export const districts = [
     title: "أحدث تصاميم أبواب WPC في القيروان",
     description: "خدمات تصميم وتركيب أبواب WPC مودرن في حي القيروان. احجز موعداً للمقاسات الآن مع فريق ناجي دورز.",
     content: "لكل من يبني منزل أحلامه في حي القيروان، نوفر لك أبواباً تعكس ذوقك الرفيع. سواء كنت تفضل اللون الأبيض الناصع أو الجوز الدافئ، لدينا التصميم الذي تبحث عنه.",
-    image: "/Images/Region/حي القيروان.png",
+    image: "/Images/Region/wpc-doors-riyadh-al-qairawan-district.png",
     projectsCount: 28
   },
   {
@@ -146,7 +146,7 @@ export const districts = [
     title: "أبواب WPC في حي الفلاح | مقاومة للنمل الأبيض",
     description: "قل وداعاً لمشاكل الرطوبة والنمل الأبيض مع أبواب WPC في حي الفلاح بالرياض.",
     content: "نحرص دائماً على راحة عملائنا في حي الفلاح. أبوابنا لا تتأثر بالماء، مما يجعلها الخيار الاستراتيجي الأول لدورات المياه والمطابخ دون الخوف من التلف.",
-    image: "/Images/Region/حي الفلاح.png",
+    image: "/Images/Region/wpc-doors-riyadh-al-falah-district.png",
     projectsCount: 19
   }
 ];

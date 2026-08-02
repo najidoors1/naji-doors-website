@@ -15,7 +15,7 @@ export default function AboutPage() {
       <PageHero 
         title="من نحن"
         description="نحن مؤسسة ناجي دورز، الاسم الأول والوجهة الموثوقة لأبواب الـ WPC العصرية في المملكة العربية السعودية، نسعى لنرتقي بمفهوم الأبواب الداخلية نحو آفاق جديدة من الجودة والفخامة."
-        bgImage="/Images/About Us Hero Back Ground.png"
+        bgImage="/Images/wpc-doors-riyadh-about-hero.png"
         breadcrumbs={[{ name: "من نحن", href: "/about-us" }]}
       />
       
@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
           <div className="relative h-[600px] rounded-3xl overflow-hidden luxury-card">
             <Image 
-              src="/Images/Services/IMG-20251127-WA0224.jpg" 
+              src="/Images/Services/wpc-doors-riyadh-service-15.jpg" 
               alt="مشاريع ناجي دورز للأبواب" 
               fill
               className="object-cover"
@@ -113,7 +113,7 @@ export default function AboutPage() {
 
         {/* Call to Action */}
         <div className="bg-gradient-to-br from-deep-brown to-black rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/Images/Home%20Hero%20Background.png')] bg-cover opacity-10 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-[url('/Images/wpc-doors-riyadh-home-hero.png')] bg-cover opacity-10 mix-blend-overlay"></div>
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">انضم إلى قائمة عملائنا المميزين</h2>
             <p className="text-gray-300 text-lg mb-8 leading-relaxed">

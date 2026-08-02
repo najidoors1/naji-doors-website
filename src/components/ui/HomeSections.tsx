@@ -152,7 +152,7 @@ export default function HomeSections() {
 
       {/* 3. Stats / Banner Section */}
       <section className="relative py-20 overflow-hidden bg-deep-brown text-white">
-        <div className="absolute inset-0 bg-[url('/Images/Services%20Hero%20Background.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/Images/wpc-doors-riyadh-services-hero.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 md:gap-8 text-center md:divide-x md:divide-x-reverse md:divide-white/20">
             <motion.div 

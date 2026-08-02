@@ -57,7 +57,7 @@ export default function FAQPage() {
       <PageHero 
         title="الأسئلة الشائعة"
         description="جمعنا لك إجابات لأكثر الأسئلة التي تصلنا حول أبواب WPC لنسهل عليك اتخاذ القرار."
-        bgImage="/Images/Services Hero Background.png"
+        bgImage="/Images/wpc-doors-riyadh-services-hero.png"
         breadcrumbs={[{ name: "الأسئلة الشائعة", href: "/faq" }]}
       />
       

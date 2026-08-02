@@ -74,7 +74,7 @@ export default function ContactPage() {
       <PageHero 
         title="تواصل معنا"
         description="نحن هنا للاستماع إليك. تواصل معنا عبر قنواتنا المتعددة أو قم بزيارة معرضنا في الرياض للتعرف على منتجاتنا عن قرب."
-        bgImage="/Images/Home Hero Background.png"
+        bgImage="/Images/wpc-doors-riyadh-home-hero.png"
         breadcrumbs={[{ name: "تواصل معنا", href: "/contact" }]}
       />
 

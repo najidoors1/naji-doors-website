@@ -16,7 +16,7 @@ export default function BlogIndexPage() {
       <PageHero 
         title="المدونة"
         description="كل ما تحتاج معرفته عن أبواب WPC، ديكورات المنازل الحديثة، ونصائح الخبراء."
-        bgImage="/Images/Products Hero Background.png"
+        bgImage="/Images/wpc-doors-riyadh-products-hero.png"
         breadcrumbs={[{ name: "المقالات", href: "/blog" }]}
       />
       

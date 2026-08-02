@@ -17,7 +17,7 @@ export default function AdvantagesPage() {
       <PageHero 
         title="لماذا أبواب WPC؟"
         description="تعرف على التكنولوجيا المتطورة وراء أبواب WPC (مركب الخشب والبلاستيك) التي تجعلها الخيار الأمثل لمناخ المملكة العربية السعودية القاسي."
-        bgImage="/Images/Home Hero Background.png"
+        bgImage="/Images/wpc-doors-riyadh-home-hero.png"
         breadcrumbs={[{ name: "المميزات", href: "/advantages" }]}
       />
       <div className="container mx-auto px-6 pt-16">

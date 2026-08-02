@@ -25,7 +25,7 @@ export default function ServicesPage() {
       <PageHero 
         title="خدماتنا"
         description="نلتزم في ناجي دورز بتقديم تجربة متكاملة لعملائنا في الرياض، تبدأ من اختيار الباب المناسب وتنتهي بتركيبه وصيانته."
-        bgImage="/Images/Services Hero Background.png"
+        bgImage="/Images/wpc-doors-riyadh-services-hero.png"
         breadcrumbs={[{ name: "خدماتنا", href: "/services" }]}
       />
       <div className="container mx-auto px-6 max-w-6xl pt-16">

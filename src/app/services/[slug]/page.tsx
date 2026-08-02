@@ -38,7 +38,7 @@ export default async function ServiceDetailsPage({ params }: { params: Promise<{
         title={service.title}
         description={service.shortDesc}
         // @ts-ignore
-        bgImage={service.image || "/Images/Services Hero Background.png"}
+        bgImage={service.image || "/Images/wpc-doors-riyadh-services-hero.png"}
         breadcrumbs={[
           { name: "الخدمات", href: "/services" },
           { name: service.title, href: `/services/${service.slug}` }

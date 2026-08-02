@@ -15,7 +15,7 @@ export default function ProductsPage() {
       <PageHero 
         title="كتالوج المنتجات"
         description="اكتشف تشكيلة أبواب ناجي دورز التي تجمع بين الأناقة الفائقة والأداء الاستثنائي."
-        bgImage="/Images/Products Hero Background.png"
+        bgImage="/Images/wpc-doors-riyadh-products-hero.png"
         breadcrumbs={[{ name: "المنتجات", href: "/products" }]}
       />
       <div className="container mx-auto px-4 md:px-6 pt-12 md:pt-16">

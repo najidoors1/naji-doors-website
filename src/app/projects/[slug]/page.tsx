@@ -40,7 +40,7 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
       <PageHero 
         title={project.title}
         description={project.description}
-        bgImage={project.image || "/Images/Projects Hero Beckground.png"}
+        bgImage={project.image || "/Images/wpc-doors-riyadh-projects-hero.png"}
         breadcrumbs={[
           { name: "المشاريع", href: "/projects" },
           { name: project.title, href: `/projects/${project.slug}` }

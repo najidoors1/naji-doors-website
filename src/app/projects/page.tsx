@@ -17,7 +17,7 @@ export default function ProjectsPage() {
       <PageHero 
         title="مشاريعنا"
         description="نفتخر بكوننا الخيار الأول لكبرى المشاريع السكنية والتجارية في الرياض. تصفح أحدث مشاريعنا التي تم توريد وتركيب أبواب WPC لها."
-        bgImage="/Images/Projects Hero Beckground.png"
+        bgImage="/Images/wpc-doors-riyadh-projects-hero.png"
         breadcrumbs={[{ name: "المشاريع", href: "/projects" }]}
       />
       <div className="container mx-auto px-6 pt-16">
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
             <Link href={`/projects/${project.slug}`} key={project.id} className="bg-white rounded-3xl overflow-hidden luxury-card group block">
               <div className="h-64 bg-gray-200 relative overflow-hidden">
                 <Image 
-                  src={project.image || "/Images/Projects Hero Beckground.png"} 
+                  src={project.image || "/Images/wpc-doors-riyadh-projects-hero.png"} 
                   alt={project.title} 
                   fill 
                   className="object-cover group-hover:scale-110 transition-transform duration-700" 

@@ -36,6 +36,7 @@ export default function Footer() {
               <li><Link href="/products" className="flex items-center gap-2 hover:text-gold hover:translate-x-[-4px] transition-all"><span className="w-1.5 h-1.5 bg-gold rounded-full"></span> المنتجات</Link></li>
               <li><Link href="/services" className="flex items-center gap-2 hover:text-gold hover:translate-x-[-4px] transition-all"><span className="w-1.5 h-1.5 bg-gold rounded-full"></span> الخدمات</Link></li>
               <li><Link href="/projects" className="flex items-center gap-2 hover:text-gold hover:translate-x-[-4px] transition-all"><span className="w-1.5 h-1.5 bg-gold rounded-full"></span> المشاريع</Link></li>
+              <li><Link href="/partners" className="flex items-center gap-2 hover:text-gold hover:translate-x-[-4px] transition-all"><span className="w-1.5 h-1.5 bg-gold rounded-full"></span> شركاء النجاح</Link></li>
             </ul>
           </div>
 

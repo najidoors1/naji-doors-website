@@ -6,6 +6,7 @@ import DoorConfigurator from "@/components/ui/DoorConfigurator";
 import TestimonialsCarousel from "@/components/ui/TestimonialsCarousel";
 import DownloadsSection from "@/components/ui/DownloadsSection";
 import InfiniteMarquee from "@/components/ui/InfiniteMarquee";
+import PartnersSection from "@/components/ui/PartnersSection";
 
 import { cookies } from "next/headers";
 
@@ -49,6 +50,7 @@ export default async function Home() {
         </div>
       </section>
 
+      <PartnersSection />
       <DownloadsSection />
     </main>
   );

@@ -38,6 +38,16 @@ export default function DownloadsPage() {
       color: "text-gold",
       bg: "bg-gold/10",
       size: "12 MB"
+    },
+    {
+      id: "handles-catalog",
+      title: "كتالوج المقابض الفاخرة",
+      description: "استعرض تشكيلتنا الواسعة من الإكسسوارات والمقابض الذكية والتقليدية للأبواب.",
+      icon: BookOpen,
+      fileUrl: "/Files/handels-catalog.pdf",
+      color: "text-rose-600",
+      bg: "bg-rose-500/10",
+      size: "24 MB"
     }
   ];
 

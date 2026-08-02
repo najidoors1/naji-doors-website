@@ -38,6 +38,7 @@ export default function Header({ initialHidden = false }: { initialHidden?: bool
     { name: "المنتجات", href: "/products" },
     { name: "خدماتنا", href: "/services" },
     { name: "المشاريع", href: "/projects" },
+    { name: "شركاء النجاح", href: "/partners" },
     { name: "المميزات", href: "/advantages" },
     { name: "الأسئلة الشائعة", href: "/faq" },
     { name: "المقالات", href: "/blog" },
@@ -67,6 +68,11 @@ export default function Header({ initialHidden = false }: { initialHidden?: bool
                   priority
                   className="object-contain"
                 />
+              </div>
+              <div className="hidden sm:flex flex-col justify-center translate-y-1">
+                <span className={`text-xl md:text-2xl font-black tracking-[0.2em] uppercase leading-none ${shouldBeSolid ? "text-deep-brown" : "text-white"}`}>
+                  Naji <span className="text-gold">Doors</span>
+                </span>
               </div>
             </Link>
 

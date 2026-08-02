@@ -46,20 +46,21 @@ export default function ServicesPage() {
                   </div>
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-deep-brown mb-3 md:mb-4">{service.title}</h2>
                   <h3 className="text-base md:text-lg text-gold font-medium mb-3 md:mb-4">{service.shortDesc}</h3>
-                  <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8">
+                  <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8 line-clamp-3">
                     {service.description}
                   </p>
                   <Link 
-                    href="/contact" 
+                    href={`/services/${service.slug}`} 
                     className="inline-flex items-center text-deep-brown font-bold hover:text-gold transition-colors"
                   >
-                    اطلب الخدمة الآن
+                    تفاصيل الخدمة
                     <svg className="w-5 h-5 mr-2 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                   </Link>
                 </div>
                 <div className="flex-1 bg-gray-100 min-h-[250px] lg:min-h-[300px] relative overflow-hidden group">
                   <Image 
-                    src={ui.img}
+                    // @ts-ignore
+                    src={service.image || ui.img}
                     alt={service.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"

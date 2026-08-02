@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { products } from "@/data/content";
+import { products, companyData, projectsData } from "@/data/content";
 import { blogPosts } from "@/data/blog";
 import { districts } from "@/data/districts";
 
@@ -41,5 +41,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...productPages, ...blogPages, ...districtPages];
+  const servicePages = companyData.services.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const projectPages = projectsData.map((project) => ({
+    url: `${baseUrl}/projects/${project.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...productPages, ...blogPages, ...districtPages, ...servicePages, ...projectPages];
 }

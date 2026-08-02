@@ -82,9 +82,13 @@ export default function Footer() {
 
         {/* Bottom Footer */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-right">
-          <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} ناجي دورز للأبواب. جميع الحقوق محفوظة.
-          </p>
+          <div className="text-gray-400 text-sm flex flex-col md:flex-row gap-2 md:gap-4 items-center">
+            <p>&copy; {new Date().getFullYear()} ناجي دورز للأبواب. جميع الحقوق محفوظة.</p>
+            <span className="hidden md:inline text-white/20">|</span>
+            <p>
+              تم تطوير الموقع بواسطة <span className="text-gold font-semibold">Medofy</span>
+            </p>
+          </div>
           <div className="flex gap-4">
             {/* Social SVGs */}
             <a href="https://www.instagram.com/najidoors?igsh=b2RleTl6cmN6MmIw&utm_source=qr" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/5 hover:bg-gold hover:text-deep-brown rounded-full flex items-center justify-center transition-all">

@@ -9,19 +9,19 @@ const doorOptions = [
     id: "walnut",
     name: "جوز هند فاخر",
     color: "#3e2723",
-    image: "/Images/Products/Doors/حفر/ND-08.png",
+    image: "/Images/Products/Doors/حفر/wpc-doors-riyadh-carved-nd08.png",
   },
   {
     id: "oak",
     name: "بلوط فاتح",
     color: "#8d6e63",
-    image: "/Images/Products/Doors/بروز/ND-09.png",
+    image: "/Images/Products/Doors/بروز/wpc-doors-riyadh-carved-nd09.png",
   },
   {
     id: "white",
     name: "أبيض مودرن",
     color: "#f5f5f5",
-    image: "/Images/Products/Doors/ساده/ND-10.png",
+    image: "/Images/Products/Doors/ساده/wpc-doors-riyadh-plain-nd10.png",
   },
 ];
 

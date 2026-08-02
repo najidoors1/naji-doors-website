@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   const serviceUI = {
-    "supply": { icon: Truck, color: "text-blue-500", bg: "bg-blue-500/10", img: "/Images/Services/IMG-20251127-WA0101.jpg" },
-    "installation": { icon: Wrench, color: "text-green-500", bg: "bg-green-500/10", img: "/Images/Services/IMG-20251127-WA0104.jpg" },
-    "maintenance": { icon: Settings, color: "text-orange-500", bg: "bg-orange-500/10", img: "/Images/Services/IMG-20251127-WA0114.jpg" },
-    "custom-design": { icon: PenTool, color: "text-purple-500", bg: "bg-purple-500/10", img: "/Images/Services/IMG-20251127-WA0124.jpg" },
-    "b2b-projects": { icon: Building, color: "text-red-500", bg: "bg-red-500/10", img: "/Images/Services/IMG-20251127-WA0151.jpg" },
-    "replacement": { icon: RefreshCw, color: "text-teal-500", bg: "bg-teal-500/10", img: "/Images/Services/IMG-20251127-WA0162.jpg" },
+    "supply": { icon: Truck, color: "text-blue-500", bg: "bg-blue-500/10", img: "/Images/Services/wpc-doors-riyadh-supply-commercial.jpg" },
+    "installation": { icon: Wrench, color: "text-green-500", bg: "bg-green-500/10", img: "/Images/Services/wpc-doors-riyadh-expert-installation.jpg" },
+    "maintenance": { icon: Settings, color: "text-orange-500", bg: "bg-orange-500/10", img: "/Images/Services/wpc-doors-riyadh-maintenance-service.jpg" },
+    "custom-design": { icon: PenTool, color: "text-purple-500", bg: "bg-purple-500/10", img: "/Images/Services/wpc-doors-riyadh-custom-design.jpg" },
+    "b2b-projects": { icon: Building, color: "text-red-500", bg: "bg-red-500/10", img: "/Images/Services/wpc-doors-riyadh-b2b-projects.jpg" },
+    "replacement": { icon: RefreshCw, color: "text-teal-500", bg: "bg-teal-500/10", img: "/Images/Services/wpc-doors-riyadh-door-replacement.jpg" },
   };
 
   return (

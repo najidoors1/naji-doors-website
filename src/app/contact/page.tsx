@@ -50,7 +50,7 @@ const socialLinks = [
     ),
     bg: "bg-pink-50",
     text: "text-pink-600",
-    hoverBg: "hover:bg-gradient-to-tr hover:from-pink-600 hover:to-purple-600",
+    hoverBg: "hover:bg-[#E1306C]",
     hoverText: "group-hover:text-white"
   },
   {

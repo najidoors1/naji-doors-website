@@ -37,7 +37,7 @@ export default function PartnersPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {partners.map((partner, index) => (
             <div key={index} className="bg-white rounded-3xl p-8 luxury-card flex flex-col items-center text-center group border border-gray-100 hover:border-gold/30 transition-all duration-300">
-              <div className="relative w-full h-32 mb-6 grayscale group-hover:grayscale-0 transition-all duration-500">
+              <div className="relative w-full h-32 mb-6 transition-all duration-500 hover:scale-105">
                 <Image 
                   src={partner.logo} 
                   alt={partner.name} 

@@ -37,7 +37,7 @@ export default function SeoSection() {
                 "ضد النمل الأبيض والحشرات",
                 "ضمان شامل يمتد لـ 10 سنوات",
                 "تصاميم كلاسيكية ومودرن",
-                "مفصلات ومقابض أوروبية عالية الجودة"
+                "مفصلات ومقابض عالية الجودة"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-gold shrink-0 mt-0.5" />
@@ -68,7 +68,7 @@ export default function SeoSection() {
                 <img src="/Images/Services/wpc-doors-riyadh-supply-commercial.jpg" alt="تركيب أبواب WPC الرياض" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
               </div>
               <div className="h-64 rounded-3xl overflow-hidden shadow-lg border border-gray-100">
-                <img src="/Images/Services/wpc-doors-riyadh-custom-design.jpg" alt="أبواب داخلية فخمة" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+                <img src="/Images/Services/wpc-doors-riyadh-custom-design.jpg" alt="مزيج من بودرة الخشب وحبيبات البلاستيك - مادة WPC" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
               </div>
             </div>
             <div className="space-y-4">

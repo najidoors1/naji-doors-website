@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: "NAJI DOORS | أبواب WPC الفاخرة في الرياض - مؤسسة ناجي دورز",
     template: "%s | ناجي دورز - أبواب WPC الرياض",
   },
-  description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. أبواب مقاومة للماء 100%، عازلة للصوت، ومضادة للنمل الأبيض. ضمان 10 سنوات. توريد وتركيب احترافي لجميع أحياء الرياض.",
+  description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. أبواب مقاومة للماء 100%، عازلة للصوت، ومضادة للنمل الأبيض. ضمان 15 سنة. توريد وتركيب احترافي لجميع أحياء الرياض.",
   keywords: [
     "أبواب WPC",
     "أبواب WPC الرياض",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     url: "https://najidoor.com",
     siteName: "ناجي دورز | NAJI DOORS",
     title: "NAJI DOORS | أبواب WPC الفاخرة في الرياض",
-    description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، ضمان 10 سنوات.",
+    description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، ضمان 15 سنة.",
     images: [
       {
         url: "/Images/Logo/Logo.png",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "NAJI DOORS | أبواب WPC الفاخرة في الرياض",
-    description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، ضمان 10 سنوات.",
+    description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، ضمان 15 سنة.",
     images: ["/Images/Logo/Logo.png"],
   },
   robots: {
@@ -133,7 +133,7 @@ export default async function RootLayout({
               url: "https://najidoor.com",
               logo: "https://najidoor.com/Images/Logo/Logo.png",
               image: "https://najidoor.com/Images/wpc-doors-riyadh-home-hero.png",
-              description: "شركة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، عازلة للصوت، ومضادة للنمل الأبيض. ضمان 10 سنوات.",
+              description: "شركة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، عازلة للصوت، ومضادة للنمل الأبيض. ضمان 15 سنة.",
               email: "najidoors.ksa@gmail.com",
               telephone: "+966575650214",
               address: {

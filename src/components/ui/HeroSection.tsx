@@ -75,8 +75,8 @@ export default function HeroSection() {
              <span className="text-xs text-gray-300">مقاومة للماء</span>
            </div>
            <div className="text-center">
-             <AnimatedCounter to={10} className="block text-xl md:text-2xl font-bold text-white" />
-             <span className="text-xs md:text-sm text-gray-300">سنوات ضمان</span>
+             <AnimatedCounter to={15} className="block text-xl md:text-2xl font-bold text-white" />
+             <span className="text-xs md:text-sm text-gray-300">سنة ضمان</span>
            </div>
            <div className="text-center">
              <AnimatedCounter from={2000} to={2030} className="block text-xl md:text-2xl font-bold text-gold" />

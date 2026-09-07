@@ -3,7 +3,7 @@
 export default function InfiniteMarquee() {
   const items = [
     "مقاومة للماء 100%",
-    "ضمان 10 سنوات",
+    "ضمان 15 سنة",
     "فخامة لا تضاهى",
     "عزل صوتي فائق",
     "صناعة سعودية",

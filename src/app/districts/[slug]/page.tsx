@@ -60,7 +60,7 @@ export default async function DistrictPage({ params }: { params: Promise<{ slug:
                 "مقاومة للماء والرطوبة 100%",
                 "عزل صوتي فائق للغرف",
                 "ضد النمل الأبيض والحشرات",
-                "ضمان شامل لمدة 10 سنوات",
+                "ضمان شامل لمدة 15 سنة",
                 `تم تنفيذ أكثر من ${district.projectsCount} مشروع بنجاح في الحي`
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center gap-3 text-deep-brown font-medium">

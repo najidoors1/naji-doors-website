@@ -4,11 +4,14 @@ import Link from "next/link";
 import { Settings, Truck, Wrench, PenTool, Building, RefreshCw } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "خدماتنا | توريد وتركيب أبواب WPC ناجي دورز",
-  description: "نقدم في ناجي دورز خدمات متكاملة لتوريد وتركيب أبواب WPC في الرياض، بالإضافة إلى خدمات ما بعد البيع والصيانة للمشاريع السكنية والتجارية.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "توريد وتركيب أبواب WPC في الرياض",
+  description: "خدمات ناجي دورز لتوريد وتركيب أبواب WPC في الرياض، مع خيارات للتصميم الخاص والمشاريع والصيانة. تعرف على الخدمة المناسبة واطلب عرض سعر.",
+  path: "/services",
+  image: "/Images/wpc-doors-riyadh-services-hero.png",
+});
 
 export default function ServicesPage() {
   const serviceUI = {
@@ -59,7 +62,6 @@ export default function ServicesPage() {
                 </div>
                 <div className="flex-1 bg-gray-100 min-h-[250px] lg:min-h-[300px] relative overflow-hidden group">
                   <Image 
-                    // @ts-ignore
                     src={service.image || ui.img}
                     alt={service.title}
                     fill

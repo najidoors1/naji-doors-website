@@ -53,7 +53,7 @@ export default function QuoteForm() {
       } else {
         setSubmitError("حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.");
       }
-    } catch (error) {
+    } catch {
       setSubmitError("حدث خطأ في الاتصال. يرجى التأكد من اتصالك بالإنترنت.");
     } finally {
       setIsSubmitting(false);
@@ -77,9 +77,10 @@ export default function QuoteForm() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700">الاسم الكريم <span className="text-red-500">*</span></label>
+              <label htmlFor="quote-name" className="block text-sm font-medium text-gray-700">الاسم الكريم <span className="text-red-500">*</span></label>
               <input
                 {...register("name")}
+                id="quote-name"
                 type="text"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all"
                 placeholder="أدخل اسمك"
@@ -88,9 +89,10 @@ export default function QuoteForm() {
             </div>
 
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700">رقم الجوال <span className="text-red-500">*</span></label>
+              <label htmlFor="quote-phone" className="block text-sm font-medium text-gray-700">رقم الجوال <span className="text-red-500">*</span></label>
               <input
                 {...register("phone")}
+                id="quote-phone"
                 type="tel"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all text-left"
                 placeholder="05XXXXXXXX"
@@ -102,23 +104,25 @@ export default function QuoteForm() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700">نوع المشروع <span className="text-red-500">*</span></label>
+              <label htmlFor="quote-project-type" className="block text-sm font-medium text-gray-700">نوع المشروع <span className="text-red-500">*</span></label>
               <select
                 {...register("projectType")}
+                id="quote-project-type"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all"
               >
                 <option value="">اختر النوع</option>
                 <option value="residential">سكني (فيلا / قصر)</option>
-                <option value="commercial">تجاري (فندق / مكتب / مستشفى)</option>
+                <option value="commercial">تجاري أو مشروع</option>
                 <option value="other">أخرى</option>
               </select>
               {errors.projectType && <p className="text-red-500 text-sm mt-1">{errors.projectType.message}</p>}
             </div>
 
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700">الكمية التقريبية <span className="text-red-500">*</span></label>
+              <label htmlFor="quote-quantity" className="block text-sm font-medium text-gray-700">الكمية التقريبية <span className="text-red-500">*</span></label>
               <input
                 {...register("quantity")}
+                id="quote-quantity"
                 type="number"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all"
                 placeholder="مثال: 15 باب"
@@ -128,9 +132,10 @@ export default function QuoteForm() {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700">الحي (داخل الرياض) <span className="text-red-500">*</span></label>
+            <label htmlFor="quote-district" className="block text-sm font-medium text-gray-700">الحي (داخل الرياض) <span className="text-red-500">*</span></label>
             <input
               {...register("district")}
+              id="quote-district"
               type="text"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all"
               placeholder="مثال: الياسمين، الملقا، النرجس..."
@@ -139,9 +144,10 @@ export default function QuoteForm() {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700">تفاصيل إضافية (اختياري)</label>
+            <label htmlFor="quote-details" className="block text-sm font-medium text-gray-700">تفاصيل إضافية (اختياري)</label>
             <textarea
               {...register("details")}
+              id="quote-details"
               rows={4}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all resize-none"
               placeholder="أضف أي تفاصيل أخرى ترغب في مشاركتها..."

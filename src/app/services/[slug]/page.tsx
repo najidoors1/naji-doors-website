@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { companyData } from "@/data/content";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
-import { CheckCircle2, ChevronRight } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 
-// @ts-ignore
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const service = companyData.services.find((s) => s.slug === resolvedParams.slug);
@@ -17,13 +16,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  return {
-    title: `${service.title} | توريد وتركيب أبواب WPC ناجي دورز`,
-    description: service.shortDesc,
-  };
+  return pageMetadata({
+    title: `${service.title} | أبواب WPC في الرياض`,
+    description: service.description,
+    path: `/services/${service.slug}`,
+    image: service.image,
+  });
 }
 
-// @ts-ignore
 export default async function ServiceDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const service = companyData.services.find((s) => s.slug === resolvedParams.slug);
@@ -37,8 +37,7 @@ export default async function ServiceDetailsPage({ params }: { params: Promise<{
       <PageHero 
         title={service.title}
         description={service.shortDesc}
-        // @ts-ignore
-        bgImage={service.image || "/Images/wpc-doors-riyadh-services-hero.png"}
+        bgImage={service.image}
         breadcrumbs={[
           { name: "الخدمات", href: "/services" },
           { name: service.title, href: `/services/${service.slug}` }
@@ -47,16 +46,13 @@ export default async function ServiceDetailsPage({ params }: { params: Promise<{
       
       <div className="container mx-auto px-6 max-w-4xl pt-16">
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-luxury mb-12 relative overflow-hidden">
-          {/* @ts-ignore */}
-          <div className="prose prose-lg prose-brown max-w-none mb-12" dangerouslySetInnerHTML={{ __html: service.content || `<p>${service.description}</p>` }} />
+          <div className="prose prose-lg prose-brown max-w-none mb-12" dangerouslySetInnerHTML={{ __html: service.content }} />
           
-          {/* @ts-ignore */}
-          {service.benefits && service.benefits.length > 0 && (
+          {service.benefits.length > 0 && (
             <div className="mt-12 bg-light-cream rounded-2xl p-8 border border-gold/20">
               <h3 className="text-2xl font-bold text-deep-brown mb-6">مزايا الخدمة</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* @ts-ignore */}
-                {service.benefits.map((benefit: string, idx: number) => (
+                {service.benefits.map((benefit, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-gold shrink-0 mt-0.5" />
                     <span className="text-gray-700">{benefit}</span>
@@ -66,13 +62,11 @@ export default async function ServiceDetailsPage({ params }: { params: Promise<{
             </div>
           )}
           
-          {/* @ts-ignore */}
-          {service.faqs && service.faqs.length > 0 && (
+          {service.faqs.length > 0 && (
             <div className="mt-12">
               <h3 className="text-2xl font-bold text-deep-brown mb-6">الأسئلة الشائعة</h3>
               <div className="space-y-4">
-                {/* @ts-ignore */}
-                {service.faqs.map((faq: any, idx: number) => (
+                {service.faqs.map((faq, idx) => (
                   <div key={idx} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
                     <h4 className="font-bold text-lg text-deep-brown mb-2">{faq.question}</h4>
                     <p className="text-gray-600">{faq.answer}</p>
@@ -92,6 +86,40 @@ export default async function ServiceDetailsPage({ params }: { params: Promise<{
           </Link>
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Service",
+                "name": service.title,
+                "description": service.description,
+                "url": `https://najidoor.com/services/${service.slug}`,
+                "image": `https://najidoor.com${service.image}`,
+                "provider": { "@id": "https://najidoor.com/#organization" },
+                "areaServed": { "@type": "City", "name": "الرياض" },
+              },
+              breadcrumbSchema([
+                { name: "الرئيسية", path: "/" },
+                { name: "الخدمات", path: "/services" },
+                { name: service.title, path: `/services/${service.slug}` },
+              ]),
+              ...(service.faqs.length > 0
+                ? [{
+                    "@type": "FAQPage",
+                    "mainEntity": service.faqs.map((faq) => ({
+                      "@type": "Question",
+                      "name": faq.question,
+                      "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
+                    })),
+                  }]
+                : []),
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

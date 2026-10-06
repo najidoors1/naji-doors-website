@@ -6,8 +6,10 @@ import PageHero from "@/components/ui/PageHero";
 import { MapPin, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "مناطق تغطية ناجي دورز في الرياض",
-  description: "اكتشف خدمات توريد وتركيب أبواب WPC في أرقى أحياء ومناطق الرياض.",
+  title: "أحياء الرياض | ناجي دورز",
+  description: "صفحات مرجعية لأحياء الرياض. تواصل مع ناجي دورز لتأكيد توفر التوريد أو التركيب لموقع مشروعك.",
+  alternates: { canonical: "/districts" },
+  robots: { index: false, follow: true },
 };
 
 export default function DistrictsIndexPage() {
@@ -15,7 +17,7 @@ export default function DistrictsIndexPage() {
     <main className="min-h-screen bg-warm-beige pb-24">
       <PageHero 
         title="مناطق التغطية بالرياض"
-        description="نغطي كافة أحياء الرياض بخدمات توريد وتركيب أبواب WPC بأعلى معايير الجودة."
+        description="تواصل معنا لتأكيد توفر خدمة التوريد أو التركيب لموقع مشروعك في الرياض."
         bgImage="/Images/wpc-doors-riyadh-districts-hero.png"
         breadcrumbs={[{ name: "مناطق التغطية", href: "/districts" }]}
       />
@@ -39,7 +41,7 @@ export default function DistrictsIndexPage() {
                   <h2 className="text-2xl font-bold">{district.name}</h2>
                 </div>
                 <div className="flex items-center justify-between text-gray-200 group-hover:text-white transition-colors">
-                  <span className="text-sm">{district.projectsCount}+ مشروع</span>
+                  <span className="text-sm">استفسر عن الخدمة</span>
                   <ArrowLeft className="w-5 h-5 transform group-hover:-translate-x-2 transition-transform" />
                 </div>
               </div>

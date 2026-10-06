@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "شركاء النجاح | ناجي دورز للأبواب",
-  description: "نفتخر في مؤسسة ناجي دورز بالتعاون مع كبرى الشركات العقارية وشركات المقاولات في المملكة العربية السعودية لتنفيذ أرقى المشاريع.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "شركاء ناجي دورز",
+  description: "تعرف على الجهات والشعارات المعروضة في صفحة شركاء ناجي دورز.",
+  path: "/partners",
+});
 
 const partners = [
   { name: "سقيفة", logo: "/Images/Partners/سقيفه.jpg", description: "شركة تطوير عقاري رائدة في تقديم الحلول السكنية الفاخرة." },

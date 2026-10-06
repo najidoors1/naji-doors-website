@@ -8,7 +8,7 @@ interface ParallaxImageProps extends ImageProps {
   offset?: number;
 }
 
-export default function ParallaxImage({ offset = 50, className, ...props }: ParallaxImageProps) {
+export default function ParallaxImage({ offset = 50, className, alt, ...props }: ParallaxImageProps) {
   const ref = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -24,7 +24,7 @@ export default function ParallaxImage({ offset = 50, className, ...props }: Para
   return (
     <div ref={ref} className={`${positionClass} overflow-hidden ${className || ''}`}>
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%] -top-[10%] bg-gradient-to-b from-[#110e0d] via-[#1f1917] to-[#110e0d]">
-        <Image {...props} className="object-contain md:object-cover" />
+        <Image {...props} alt={alt} className="object-contain md:object-cover" />
       </motion.div>
     </div>
   );

@@ -3,11 +3,13 @@ import { companyData } from "@/data/content";
 import { Droplet, VolumeX, Bug, Paintbrush, Leaf } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import SpotlightCard from "@/components/ui/SpotlightCard";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "مميزات أبواب WPC | ناجي دورز",
-  description: "اكتشف مميزات أبواب WPC من ناجي دورز. أبواب مقاومة للماء، عازلة للصوت، ومضادة للنمل الأبيض، مصممة خصيصاً للبيئة السعودية.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "مميزات أبواب WPC وكيف تختارها",
+  description: "تعرف على أبواب WPC وخيارات التصميم والاستخدام، وما الذي ينبغي مراجعته في المواصفات قبل اختيار باب للمنزل أو الفيلا أو المشروع.",
+  path: "/advantages",
+});
 
 export default function AdvantagesPage() {
   const advantageIcons = [Droplet, VolumeX, Bug, Paintbrush, Leaf];

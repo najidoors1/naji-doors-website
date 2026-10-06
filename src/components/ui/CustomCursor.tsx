@@ -14,9 +14,8 @@ export default function CustomCursor() {
       return;
     }
 
-    setIsVisible(true);
-
     const updateMousePosition = (e: MouseEvent) => {
+      setIsVisible(true);
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 

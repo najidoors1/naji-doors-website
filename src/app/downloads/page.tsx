@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import { Download, FileText, BookOpen, Palette } from "lucide-react";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "مركز التحميلات | كتالوج الأبواب والألوان",
-  description: "حمل أحدث كتالوجات أبواب WPC، كتالوج الألوان، والملف التعريفي الخاص بمؤسسة ناجي دورز.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "كتالوج أبواب WPC والألوان",
+  description: "حمّل كتالوجات أبواب WPC والألوان والمقابض والملف التعريفي المتاحة من ناجي دورز لمراجعة الخيارات قبل طلب عرض السعر.",
+  path: "/downloads",
+  image: "/Images/wpc-doors-riyadh-products-hero.png",
+});
 
 export default function DownloadsPage() {
   const files = [

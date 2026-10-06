@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/data/blog";
 import PageHero from "@/components/ui/PageHero";
 import { Calendar, User, ArrowRight, Share2 } from "lucide-react";
+import { absoluteUrl, breadcrumbSchema, pageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -20,15 +20,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: "المقال غير موجود" };
   }
 
-  return {
-    title: `${post.title} | مدونة ناجي دورز`,
+  return pageMetadata({
+    title: post.title,
     description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      images: [post.image],
-    },
-  };
+    path: `/blog/${post.slug}`,
+    image: post.image,
+  });
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -82,24 +79,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": post.title,
-            "image": [
-              `https://najidoor.com${post.image}`
-            ],
-            "datePublished": post.date,
-            "author": [{
-              "@type": "Person",
-              "name": post.author
-            }],
-            "publisher": {
-              "@type": "Organization",
-              "name": "مؤسسة ناجي دورز للأبواب",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://najidoor.com/Images/Logo/Logo.png"
-              }
-            }
+            "@graph": [
+              {
+                "@type": "Article",
+                "headline": post.title,
+                "description": post.excerpt,
+                "mainEntityOfPage": absoluteUrl(`/blog/${post.slug}`),
+                "image": [absoluteUrl(post.image)],
+                "author": { "@id": "https://najidoor.com/#organization" },
+                "publisher": { "@id": "https://najidoor.com/#organization" },
+                "inLanguage": "ar-SA"
+              },
+              breadcrumbSchema([
+                { name: "الرئيسية", path: "/" },
+                { name: "المقالات", path: "/blog" },
+                { name: post.title, path: `/blog/${post.slug}` },
+              ]),
+            ]
           })
         }}
       />

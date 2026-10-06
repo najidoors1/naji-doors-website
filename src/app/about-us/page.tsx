@@ -3,18 +3,21 @@ import PageHero from "@/components/ui/PageHero";
 import { ShieldCheck, Target, Eye, Award, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "من نحن | مؤسسة ناجي دورز للأبواب",
-  description: "تعرف على مؤسسة ناجي دورز الرائدة في استيراد وتوريد وتركيب أبواب WPC في الرياض. جودة، التزام، واحترافية.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "عن ناجي دورز | أبواب WPC في الرياض",
+  description: "تعرف على ناجي دورز وخدماتها في توريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع.",
+  path: "/about-us",
+  image: "/Images/wpc-doors-riyadh-about-hero.png",
+});
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-warm-beige pb-24">
       <PageHero 
         title="من نحن"
-        description="نحن مؤسسة ناجي دورز، الاسم الأول والوجهة الموثوقة لأبواب الـ WPC العصرية في المملكة العربية السعودية، نسعى لنرتقي بمفهوم الأبواب الداخلية نحو آفاق جديدة من الجودة والفخامة."
+        description="ناجي دورز تقدم حلول أبواب WPC للمنازل والفلل والمشاريع في الرياض، من اختيار التصميم إلى التوريد والتركيب."
         bgImage="/Images/wpc-doors-riyadh-about-hero.png"
         breadcrumbs={[{ name: "من نحن", href: "/about-us" }]}
       />
@@ -47,18 +50,18 @@ export default function AboutPage() {
                 انطلقت مؤسسة ناجي دورز من مدينة الرياض لتكون استجابة حقيقية لاحتياجات السوق السعودي المتطورة في قطاع البناء والديكور. لاحظنا معاناة الكثيرين من مشاكل الأبواب الخشبية التقليدية كالتأثر بالرطوبة، التقوس، والنمل الأبيض، فكانت انطلاقتنا لتقديم البديل الأذكى والأقوى: <strong>أبواب الخشب البلاستيكي (WPC)</strong>.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed mt-4">
-                نفخر اليوم بأننا الخيار الأول لكبرى المشاريع السكنية والتجارية، بفضل شراكاتنا مع أفضل المصانع العالمية، وفريق عملنا المتخصص الذي يضمن التركيب بأعلى معايير الدقة والاحترافية.
+                نعرض موديلات متعددة من أبواب WPC وخدمات للتوريد والتركيب والتصميم الخاص والمشاريع. نساعد العميل على مطابقة التصميم والقياسات ومتطلبات الموقع قبل تقديم العرض.
               </p>
             </div>
             
             <div className="grid grid-cols-2 gap-6 pt-6 border-t border-gray-200">
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="text-4xl font-bold text-gold mb-2">+10</h3>
-                <p className="text-deep-brown font-medium">سنوات من الخبرة</p>
+                <h3 className="text-2xl font-bold text-gold mb-2">الرياض</h3>
+                <p className="text-deep-brown font-medium">نطاق الخدمة المعلن</p>
               </div>
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="text-4xl font-bold text-gold mb-2">5000+</h3>
-                <p className="text-deep-brown font-medium">باب تم تركيبه بنجاح</p>
+                <h3 className="text-2xl font-bold text-gold mb-2">WPC</h3>
+                <p className="text-deep-brown font-medium">أبواب داخلية وخيارات تصميم</p>
               </div>
             </div>
           </div>
@@ -71,7 +74,7 @@ export default function AboutPage() {
             <Eye className="w-16 h-16 text-gold mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-deep-brown mb-6">رؤيتنا</h2>
             <p className="text-gray-600 leading-relaxed text-lg">
-              أن نكون الرواد في صناعة وتوريد الأبواب الداخلية في الشرق الأوسط، وأن ترتبط علامتنا التجارية "ناجي دورز" دائماً بالجودة، الابتكار، والتميز في التصميم الداخلي، مواكبين بذلك النهضة العمرانية ورؤية المملكة 2030.
+              أن نطور طريقة واضحة لاختيار الأبواب الداخلية، وأن ترتبط علامة ناجي دورز بالجودة والابتكار في التصميم الداخلي.
             </p>
           </div>
           
@@ -80,7 +83,7 @@ export default function AboutPage() {
             <Target className="w-16 h-16 text-deep-brown mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-deep-brown mb-6">رسالتنا</h2>
             <p className="text-gray-600 leading-relaxed text-lg">
-              تقديم منتجات مستدامة وصديقة للبيئة تلبي تطلعات عملائنا من حيث الجمال والمتانة، مع التزامنا التام بتقديم خدمة عملاء استثنائية وخدمات ما بعد البيع تضمن رضا العميل بنسبة 100%.
+              تقديم تجربة واضحة تبدأ بفهم متطلبات العميل واختيار التصميم المناسب، مع توضيح التفاصيل اللازمة للتوريد والتركيب وخدمة ما بعد البيع.
             </p>
           </div>
         </div>

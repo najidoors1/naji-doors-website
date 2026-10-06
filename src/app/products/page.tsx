@@ -3,11 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/content";
 import PageHero from "@/components/ui/PageHero";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "كتالوج المنتجات | أبواب WPC ناجي دورز",
-  description: "استعرض تشكيلتنا الواسعة من أبواب WPC الفاخرة للفلل والمشاريع السكنية. أبواب مقاومة للماء وعازلة للصوت بتصاميم عصرية وكلاسيكية.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "كتالوج أبواب WPC في الرياض",
+  description: "استعرض موديلات أبواب WPC من ناجي دورز، بما فيها التصاميم السادة والمحـفورة والزجاجية والاستيل والسحاب، واطلب عرض سعر للتصميم المناسب.",
+  path: "/products",
+  image: "/Images/wpc-doors-riyadh-products-hero.png",
+});
 
 export default function ProductsPage() {
   return (

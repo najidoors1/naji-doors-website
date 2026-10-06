@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import QuoteForm from "@/components/ui/QuoteForm";
 import PageHero from "@/components/ui/PageHero";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "تواصل معنا | وسائل التواصل - ناجي دورز",
-  description: "تواصل مع مؤسسة ناجي دورز في الرياض عبر الواتساب، سناب شات، الاتصال المباشر، أو بزيارة معرضنا.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "طلب عرض سعر أبواب WPC في الرياض",
+  description: "تواصل مع ناجي دورز لطلب عرض سعر لأبواب WPC في الرياض. شارك نوع المشروع والمقاسات والكمية والتشطيب المطلوبين لتحديد العرض المناسب.",
+  path: "/contact",
+});
 
 const socialLinks = [
   {
@@ -73,7 +75,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-warm-beige pb-24">
       <PageHero 
         title="تواصل معنا"
-        description="نحن هنا للاستماع إليك. تواصل معنا عبر قنواتنا المتعددة أو قم بزيارة معرضنا في الرياض للتعرف على منتجاتنا عن قرب."
+        description="تواصل مع ناجي دورز لطلب عرض سعر لأبواب WPC في الرياض، أو شارك متطلبات منزلك أو فيلتك أو مشروعك."
         bgImage="/Images/wpc-doors-riyadh-home-hero.png"
         breadcrumbs={[{ name: "تواصل معنا", href: "/contact" }]}
       />
@@ -136,35 +138,27 @@ export default function ContactPage() {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-deep-brown mb-2 text-lg">المعرض الرئيسي</h3>
+                    <h3 className="font-bold text-deep-brown mb-2 text-lg">نطاق الخدمة</h3>
                     <p className="text-gray-600 leading-relaxed">الرياض، المملكة العربية السعودية</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-5 group">
-                  <div className="w-14 h-14 rounded-2xl bg-light-cream border border-gold/20 flex items-center justify-center flex-shrink-0 group-hover:bg-gold group-hover:text-white transition-colors duration-300 text-gold">
-                    <Clock className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-deep-brown mb-2 text-lg">ساعات العمل</h3>
-                    <p className="text-gray-600 leading-relaxed">السبت - الخميس: 9:00 صباحاً - 10:00 مساءً<br/>الجمعة: مغلق</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Google Map Embedded */}
-            <div className="h-[350px] rounded-3xl overflow-hidden luxury-card border border-gold/10 bg-white relative group">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115981.9366657904!2d46.70296711953282!3d24.713551694294436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1714571982991!5m2!1sen!2s" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={true} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale group-hover:grayscale-0 transition-all duration-700"
-              ></iframe>
+            <div className="rounded-3xl border border-gold/10 bg-white p-8">
+              <h2 className="text-2xl font-bold text-deep-brown mb-5">كيف نحضر عرض السعر؟</h2>
+              <p className="text-gray-600 leading-relaxed mb-5">
+                تختلف تكلفة أبواب WPC بحسب المقاس والتصميم والتشطيب والإطار والإكسسوارات والكمية ومتطلبات التركيب. لذلك لا نعرض سعراً ثابتاً قبل معرفة متطلباتك.
+              </p>
+              <ul className="space-y-3 text-gray-700 list-disc list-inside">
+                <li>نوع المشروع وموقعه داخل الرياض.</li>
+                <li>عدد الأبواب والمقاسات التقريبية.</li>
+                <li>الموديل أو صور للتصميم المطلوب.</li>
+                <li>التشطيبات والإكسسوارات وخدمة التركيب عند الحاجة.</li>
+              </ul>
+              <Link href="/products" className="inline-block mt-6 text-gold font-bold hover:text-deep-brown transition-colors">
+                استعرض الموديلات قبل الطلب
+              </Link>
             </div>
           </div>
 

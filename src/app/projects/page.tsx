@@ -1,29 +1,30 @@
 import type { Metadata } from "next";
-import { Building2, Home as HomeIcon } from "lucide-react";
+import { Building2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
-// @ts-ignore
+import { pageMetadata } from "@/lib/seo";
 import { projectsData } from "@/data/content";
 
-export const metadata: Metadata = {
-  title: "مشاريعنا | ناجي دورز في الرياض",
-  description: "اطلع على أبرز مشاريع ناجي دورز في توريد وتركيب أبواب WPC للمشاريع السكنية والتجارية في الرياض.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "مشاريع أبواب WPC في الرياض",
+  description: "اطلع على نماذج مشاريع ناجي دورز في توريد وتركيب أبواب WPC للمشاريع السكنية والتجارية في الرياض.",
+  path: "/projects",
+  image: "/Images/wpc-doors-riyadh-projects-hero.png",
+});
 
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-warm-beige pb-24">
       <PageHero 
         title="مشاريعنا"
-        description="نفتخر بكوننا الخيار الأول لكبرى المشاريع السكنية والتجارية في الرياض. تصفح أحدث مشاريعنا التي تم توريد وتركيب أبواب WPC لها."
+        description="تصفح نماذج مشاريع ناجي دورز التي تم فيها توريد وتركيب أبواب WPC في الرياض."
         bgImage="/Images/wpc-doors-riyadh-projects-hero.png"
         breadcrumbs={[{ name: "المشاريع", href: "/projects" }]}
       />
       <div className="container mx-auto px-6 pt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* @ts-ignore */}
-          {projectsData?.map((project: any) => (
+          {projectsData.map((project) => (
             <Link href={`/projects/${project.slug}`} key={project.id} className="bg-white rounded-3xl overflow-hidden luxury-card group block">
               <div className="h-64 bg-gray-200 relative overflow-hidden">
                 <Image 

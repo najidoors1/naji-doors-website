@@ -4,11 +4,14 @@ import Image from "next/image";
 import { blogPosts } from "@/data/blog";
 import PageHero from "@/components/ui/PageHero";
 import { Calendar, User, ArrowLeft } from "lucide-react";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "المقالات والمدونة | أبواب WPC ناجي دورز",
-  description: "نصائح، أخبار، ومقالات عن أبواب WPC وطرق اختيارها وصيانتها في السعودية.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "دليل أبواب WPC واختيار الأبواب الداخلية",
+  description: "مقالات وإجابات عملية حول أبواب WPC، وكيفية اختيار التصميم والاستخدام المناسب، والعوامل التي تراجعها قبل التوريد والتركيب.",
+  path: "/blog",
+  image: "/Images/wpc-doors-riyadh-products-hero.png",
+});
 
 export default function BlogIndexPage() {
   return (

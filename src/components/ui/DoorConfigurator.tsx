@@ -69,8 +69,8 @@ export default function DoorConfigurator() {
               <h4 className="font-bold text-deep-brown mb-2">التشطيب المختار:</h4>
               <p className="text-xl text-gold">{activeDoor.name}</p>
               <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center text-sm text-gray-500">
-                <span>مقاوم للماء 100%</span>
-                <span>ضد النمل الأبيض</span>
+                <span>تصور للتشطيب</span>
+                <span>راجع المواصفات عند الطلب</span>
               </div>
             </div>
           </div>

@@ -23,10 +23,10 @@ const tajawal = Tajawal({
 export const metadata: Metadata = {
   metadataBase: new URL("https://najidoor.com"),
   title: {
-    default: "NAJI DOORS | أبواب WPC الفاخرة في الرياض - مؤسسة ناجي دورز",
-    template: "%s | ناجي دورز - أبواب WPC الرياض",
+    default: "ناجي دورز | أبواب WPC في الرياض",
+    template: "%s | ناجي دورز",
   },
-  description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. أبواب مقاومة للماء 100%، عازلة للصوت، ومضادة للنمل الأبيض. ضمان 15 سنة. توريد وتركيب احترافي لجميع أحياء الرياض.",
+  description: "ناجي دورز لعرض وتوريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع. استعرض الموديلات والخدمات واطلب عرض سعر حسب احتياجك.",
   keywords: [
     "أبواب WPC",
     "أبواب WPC الرياض",
@@ -61,21 +61,21 @@ export const metadata: Metadata = {
     locale: "ar_SA",
     url: "https://najidoor.com",
     siteName: "ناجي دورز | NAJI DOORS",
-    title: "NAJI DOORS | أبواب WPC الفاخرة في الرياض",
-    description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، ضمان 15 سنة.",
+    title: "ناجي دورز | أبواب WPC في الرياض",
+    description: "توريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع.",
     images: [
       {
         url: "/Images/Logo/Logo.png",
         width: 1200,
         height: 630,
-        alt: "ناجي دورز - أبواب WPC فاخرة في الرياض",
+        alt: "ناجي دورز - أبواب WPC في الرياض",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NAJI DOORS | أبواب WPC الفاخرة في الرياض",
-    description: "مؤسسة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، ضمان 15 سنة.",
+    title: "ناجي دورز | أبواب WPC في الرياض",
+    description: "توريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع.",
     images: ["/Images/Logo/Logo.png"],
   },
   robots: {
@@ -89,12 +89,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://najidoor.com",
-  },
 };
-
-import Script from "next/script";
 
 export default async function RootLayout({
   children,
@@ -127,42 +122,37 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "HomeAndConstructionBusiness",
-              name: "مؤسسة ناجي دورز للأبواب",
-              alternateName: "NAJI DOORS",
-              url: "https://najidoor.com",
-              logo: "https://najidoor.com/Images/Logo/Logo.png",
-              image: "https://najidoor.com/Images/wpc-doors-riyadh-home-hero.png",
-              description: "شركة ناجي دورز الرائدة في توريد وتركيب أبواب WPC الفاخرة في الرياض. مقاومة للماء 100%، عازلة للصوت، ومضادة للنمل الأبيض. ضمان 15 سنة.",
-              email: "najidoors.ksa@gmail.com",
-              telephone: "+966575650214",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "الرياض",
-                addressCountry: "SA",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 24.7136,
-                longitude: 46.6753
-              },
-              openingHoursSpecification: [
+              "@graph": [
                 {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"
-                  ],
-                  opens: "08:00",
-                  closes: "22:00"
-                }
-              ],
-              priceRange: "$$",
-              areaServed: {
-                "@type": "City",
-                name: "الرياض",
-              },
-              sameAs: [
-                "https://wa.me/966575650214",
+                  "@type": "Organization",
+                  "@id": "https://najidoor.com/#organization",
+                  name: "مؤسسة ناجي دورز للأبواب",
+                  alternateName: "NAJI DOORS",
+                  url: "https://najidoor.com",
+                  logo: "https://najidoor.com/Images/Logo/Logo.png",
+                  image: "https://najidoor.com/Images/wpc-doors-riyadh-home-hero.png",
+                  description: "توريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع.",
+                  email: "najidoors.ksa@gmail.com",
+                  telephone: "+966575650214",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "الرياض",
+                    addressCountry: "SA",
+                  },
+                  areaServed: {
+                    "@type": "City",
+                    name: "الرياض",
+                  },
+                  sameAs: ["https://wa.me/966575650214"],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://najidoor.com/#website",
+                  url: "https://najidoor.com",
+                  name: "ناجي دورز",
+                  inLanguage: "ar-SA",
+                  publisher: { "@id": "https://najidoor.com/#organization" },
+                },
               ],
             }),
           }}

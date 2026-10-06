@@ -1,11 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import ParallaxImage from "./ParallaxImage";
-import AnimatedCounter from "./AnimatedCounter";
 import HeroParticles from "./HeroParticles";
 import SplitText from "./SplitText";
 
@@ -35,12 +33,12 @@ export default function HeroSection() {
           </span>
           
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight drop-shadow-md flex flex-col items-center justify-center">
-            <SplitText text="بوابة الفخامة" delayOffset={0.6} className="justify-center" />
-            <SplitText text="لـ مشاريعك الراقية" delayOffset={1.2} className="text-light-cream font-light justify-center mt-2" />
+            <SplitText text="شركة أبواب WPC في الرياض" delayOffset={0.6} className="justify-center" />
+            <SplitText text="توريد وتركيب للمنازل والمشاريع" delayOffset={1.2} className="text-light-cream font-light justify-center mt-2" />
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 md:mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-            أبواب WPC داخلية مقاومة للماء 100%، عازلة للصوت، ومصممة بأعلى معايير الجودة لتناسب أحدث تصاميم الفلل والقصور في الرياض.
+            استعرض أبواب WPC الداخلية للمنازل والفلل والمشاريع في الرياض، واختر التصميم والتشطيب المناسبين ثم اطلب عرض سعر حسب احتياجك.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -62,7 +60,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Trust Badges - Static on mobile, absolute on desktop */}
+      {/* Service overview - Static on mobile, absolute on desktop */}
       <motion.div 
         className="w-full mt-12 md:mt-0 md:absolute md:bottom-8 left-0 right-0 z-10 px-4 md:px-6"
         initial={{ opacity: 0, y: 20 }}
@@ -71,20 +69,20 @@ export default function HeroSection() {
       >
         <div className="max-w-4xl mx-auto bg-deep-brown/80 backdrop-blur-md rounded-2xl p-4 md:p-6 grid grid-cols-2 md:flex md:justify-around items-center gap-4 md:gap-0 border border-gold/20 shadow-xl">
            <div className="text-center">
-             <AnimatedCounter to={100} suffix="%" className="block text-xl md:text-2xl font-bold text-white" />
-             <span className="text-xs text-gray-300">مقاومة للماء</span>
+             <span className="block text-xl md:text-2xl font-bold text-white">WPC</span>
+             <span className="text-xs text-gray-300">أبواب داخلية</span>
            </div>
            <div className="text-center">
-             <AnimatedCounter to={15} className="block text-xl md:text-2xl font-bold text-white" />
-             <span className="text-xs md:text-sm text-gray-300">سنة ضمان</span>
+             <span className="block text-xl md:text-2xl font-bold text-white">تصاميم</span>
+             <span className="text-xs md:text-sm text-gray-300">مودرن وكلاسيكية</span>
            </div>
            <div className="text-center">
-             <AnimatedCounter from={2000} to={2030} className="block text-xl md:text-2xl font-bold text-gold" />
-             <span className="text-xs md:text-sm text-gray-300">رؤية المملكة</span>
+             <span className="block text-xl md:text-2xl font-bold text-gold">الرياض</span>
+             <span className="text-xs md:text-sm text-gray-300">نطاق الخدمة المعلن</span>
            </div>
            <div className="text-center">
-             <span className="block text-xl md:text-2xl font-bold text-white">ZATCA</span>
-             <span className="text-xs md:text-sm text-gray-300">معتمد</span>
+             <span className="block text-xl md:text-2xl font-bold text-white">عرض سعر</span>
+             <span className="text-xs md:text-sm text-gray-300">حسب متطلبات المشروع</span>
            </div>
         </div>
       </motion.div>

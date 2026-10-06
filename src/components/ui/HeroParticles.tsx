@@ -1,20 +1,16 @@
 "use client";
 
-import { useMemo } from "react";
+const particles = Array.from({ length: 18 }, (_, id) => ({
+  id,
+  left: `${(id * 37) % 100}%`,
+  top: `${60 + ((id * 11) % 40)}%`,
+  size: 1 + ((id * 7) % 25) / 10,
+  duration: 10 + ((id * 13) % 15),
+  delay: (id * 3) % 10,
+  opacity: 0.15 + ((id * 5) % 25) / 100,
+}));
 
 export default function HeroParticles() {
-  const particles = useMemo(() => {
-    return Array.from({ length: 18 }, (_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      top: `${60 + Math.random() * 40}%`,
-      size: 1 + Math.random() * 2.5,
-      duration: 10 + Math.random() * 15,
-      delay: Math.random() * 10,
-      opacity: 0.15 + Math.random() * 0.4,
-    }));
-  }, []);
-
   return (
     <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
       {particles.map((p) => (

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { districts } from "@/data/districts";
 import PageHero from "@/components/ui/PageHero";
 import { CheckCircle2, PhoneCall, ArrowLeft } from "lucide-react";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return districts.map((d) => ({
@@ -21,8 +22,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: district.title,
-    description: district.description,
+    ...pageMetadata({
+      title: `أبواب WPC في ${district.name}`,
+      description: `تواصل مع ناجي دورز لتأكيد توفر التوريد أو التركيب لأبواب WPC في ${district.name} ومتطلبات مشروعك.`,
+      path: `/districts/${district.slug}`,
+      image: district.image,
+    }),
+    robots: { index: false, follow: true },
   };
 }
 
@@ -57,11 +63,11 @@ export default async function DistrictPage({ params }: { params: Promise<{ slug:
             </p>
             <ul className="space-y-4 pt-4">
               {[
-                "مقاومة للماء والرطوبة 100%",
-                "عزل صوتي فائق للغرف",
-                "ضد النمل الأبيض والحشرات",
-                "ضمان شامل لمدة 15 سنة",
-                `تم تنفيذ أكثر من ${district.projectsCount} مشروع بنجاح في الحي`
+                "موديلات متعددة لأبواب WPC الداخلية",
+                "خيارات للتصاميم والتشطيبات",
+                "خدمات توريد وتركيب معلنة في الرياض",
+                "عرض سعر بحسب المقاسات ومتطلبات المشروع",
+                "تأكيد التوفر والموعد قبل البدء"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center gap-3 text-deep-brown font-medium">
                   <CheckCircle2 className="w-6 h-6 text-gold" />
@@ -89,14 +95,14 @@ export default async function DistrictPage({ params }: { params: Promise<{ slug:
           <div className="relative h-[500px] w-full rounded-3xl overflow-hidden luxury-card">
             <Image 
               src={district.image}
-              alt={`تركيب أبواب في ${district.name}`}
+              alt={`أبواب WPC في ${district.name}`}
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-deep-brown/80 to-transparent"></div>
             <div className="absolute bottom-8 right-8 left-8 text-white">
-              <p className="font-bold text-2xl mb-2">عملاء {district.name}</p>
-              <p className="text-gray-200">ينصحون بمنتجاتنا بفضل الجودة والالتزام بالمواعيد.</p>
+              <p className="font-bold text-2xl mb-2">أبواب WPC في {district.name}</p>
+              <p className="text-gray-200">تواصل معنا لتأكيد متطلبات الموقع وخدمة التوريد أو التركيب.</p>
             </div>
           </div>
         </div>

@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
-// @ts-ignore
 import { projectsData } from "@/data/content";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import { Calendar, MapPin, User, CheckCircle2 } from "lucide-react";
+import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 
-// @ts-ignore
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
-  // @ts-ignore
-  const project = projectsData?.find((p) => p.slug === resolvedParams.slug);
+  const project = projectsData.find((p) => p.slug === resolvedParams.slug);
   
   if (!project) {
     return {
@@ -19,17 +17,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  return {
-    title: `${project.title} | مشاريع ناجي دورز في الرياض`,
+  return pageMetadata({
+    title: project.title,
     description: project.description,
-  };
+    path: `/projects/${project.slug}`,
+    image: project.image,
+  });
 }
 
-// @ts-ignore
 export default async function ProjectDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  // @ts-ignore
-  const project = projectsData?.find((p) => p.slug === resolvedParams.slug);
+  const project = projectsData.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     notFound();
@@ -60,8 +58,7 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
               <div className="bg-white rounded-3xl p-8 md:p-10 shadow-luxury">
                 <h3 className="text-2xl font-bold text-deep-brown mb-8">معرض صور المشروع</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* @ts-ignore */}
-                  {project.gallery.map((img: string, idx: number) => (
+                  {project.gallery.map((img, idx) => (
                     <div key={idx} className="relative h-64 rounded-xl overflow-hidden group">
                       <Image 
                         src={img} 
@@ -115,8 +112,7 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
               <div className="bg-deep-brown text-white rounded-3xl p-8 shadow-luxury">
                 <h3 className="text-xl font-bold text-gold mb-6">نطاق العمل</h3>
                 <ul className="space-y-4">
-                  {/* @ts-ignore */}
-                  {project.scope.map((item: string, idx: number) => (
+                  {project.scope.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <CheckCircle2 className="w-6 h-6 text-gold shrink-0" />
                       <span className="text-white/90">{item}</span>
@@ -137,6 +133,18 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
           </div>
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: "الرئيسية", path: "/" },
+              { name: "المشاريع", path: "/projects" },
+              { name: project.title, path: `/projects/${project.slug}` },
+            ])
+          ),
+        }}
+      />
     </main>
   );
 }

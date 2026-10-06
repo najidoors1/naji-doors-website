@@ -4,7 +4,7 @@ import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/content";
-import { ShieldCheck, Droplet, VolumeX, ArrowLeft, Star, Settings } from "lucide-react";
+import { ShieldCheck, Droplet, VolumeX, ArrowLeft } from "lucide-react";
 import TiltCard from "./TiltCard";
 
 const fadeIn: Variants = {
@@ -39,11 +39,11 @@ export default function HomeSections() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-deep-brown mb-4">
-              لماذا ناجي دورز؟
+              كيف تختار باب WPC المناسب؟
             </h2>
             <div className="w-24 h-1 bg-gold mx-auto mb-6 rounded-full"></div>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-              نجمع بين فخامة التصميم ومتانة المواد لتقديم أبواب تعكس رقي مشاريعكم وتتحمل أقسى الظروف المناخية في الرياض.
+              ابدأ بتحديد المقاس والاستخدام والتصميم والتشطيب، ثم راجع مواصفات الموديل ومتطلبات التركيب قبل طلب عرض السعر.
             </p>
           </motion.div>
 
@@ -58,9 +58,9 @@ export default function HomeSections() {
             <motion.div variants={fadeIn} className="md:col-span-2 bg-gradient-to-br from-white to-warm-beige border border-gold/30 rounded-3xl p-6 md:p-12 luxury-card relative overflow-hidden group shadow-md hover:shadow-lg transition-all">
               <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-700"></div>
               <Droplet className="w-12 h-12 text-gold mb-6" />
-              <h3 className="text-2xl md:text-3xl font-bold text-deep-brown mb-4">مقاومة مطلقة للماء والرطوبة</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-deep-brown mb-4">اختيار الباب للمساحات الرطبة</h3>
               <p className="text-gray-600 text-lg leading-relaxed max-w-md">
-                تتكون أبوابنا من مزيج من بودرة الخشب وحبيبات البلاستيك، مما يجعلها درعاً منيعاً ضد الماء بنسبة 100%. الخيار الاستراتيجي الأمثل لدورات المياه والمطابخ دون القلق من الانتفاخ أو التآكل بمرور الزمن.
+                تتوفر أبواب WPC ضمن خيارات الأبواب الداخلية. اسأل عن مواصفات الموديل والإطار والعناية المناسبة إذا كان الاستخدام في الحمامات أو المساحات المعرضة للرطوبة.
               </p>
             </motion.div>
 
@@ -68,26 +68,26 @@ export default function HomeSections() {
             <motion.div variants={fadeIn} className="bg-deep-brown text-white rounded-3xl p-6 md:p-8 luxury-card relative overflow-hidden group">
               <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <VolumeX className="w-10 h-10 text-gold mb-6 relative z-10" />
-              <h3 className="text-xl font-bold mb-3 relative z-10">عزل صوتي فائق</h3>
+              <h3 className="text-xl font-bold mb-3 relative z-10">تفاصيل تؤثر في الأداء</h3>
               <p className="text-gray-300 relative z-10">
-                بنية داخلية مبتكرة توفر خصوصية تامة وهدوء مثالي لغرف النوم والمكاتب.
+                الإطار والمفصلات وطريقة التركيب والتشطيب عناصر تستحق المراجعة مع مواصفات الباب قبل الاختيار.
               </p>
             </motion.div>
 
             {/* Side Feature 2 */}
             <motion.div variants={fadeIn} className="bg-gradient-to-br from-white to-warm-beige border border-gold/30 rounded-3xl p-6 md:p-8 luxury-card shadow-md hover:shadow-lg transition-all">
               <ShieldCheck className="w-10 h-10 text-gold mb-6" />
-              <h3 className="text-xl font-bold text-deep-brown mb-3">ضد النمل الأبيض</h3>
+              <h3 className="text-xl font-bold text-deep-brown mb-3">موديلات وتشطيبات متنوعة</h3>
               <p className="text-gray-600">
-                تركيبة المواد تمنع تكون البيئات الحاضنة للحشرات تماماً، لضمان استدامة الباب لسنوات.
+                استعرض الأبواب السادة والمحـفورة والزجاجية والاستيل والسحاب، ثم اختر النمط الذي ينسجم مع ديكور المكان.
               </p>
             </motion.div>
 
             {/* Side Feature 3 */}
             <motion.div variants={fadeIn} className="md:col-span-2 bg-gradient-to-l from-warm-beige via-white to-warm-beige border border-gold/30 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between text-center md:text-right gap-6 md:gap-0 luxury-card group cursor-pointer shadow-md hover:shadow-lg transition-all">
               <div>
-                <h3 className="text-xl md:text-2xl font-bold text-deep-brown mb-2 group-hover:text-gold transition-colors">صناعة وتوريد للمشاريع الكبرى</h3>
-                <p className="text-gray-600">قدرة إنتاجية عالية لتلبية متطلبات المشاريع السكنية والتجارية.</p>
+                <h3 className="text-xl md:text-2xl font-bold text-deep-brown mb-2 group-hover:text-gold transition-colors">توريد أبواب WPC للمشاريع</h3>
+                <p className="text-gray-600">شارك عدد الأبواب والمقاسات والجدول المطلوب لنناقش احتياجات مشروعك.</p>
               </div>
               <Link href="/projects" className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md group-hover:bg-gold group-hover:text-white transition-all transform group-hover:-translate-x-2">
                 <ArrowLeft className="w-6 h-6" />
@@ -150,7 +150,7 @@ export default function HomeSections() {
         </div>
       </section>
 
-      {/* 3. Stats / Banner Section */}
+      {/* 3. Service overview */}
       <section className="relative py-20 overflow-hidden bg-deep-brown text-white">
         <div className="absolute inset-0 bg-[url('/Images/wpc-doors-riyadh-services-hero.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -161,8 +161,8 @@ export default function HomeSections() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-gold mb-2">10+</div>
-              <div className="text-sm md:text-base text-gray-300">سنوات خبرة</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold mb-2">المنتجات</div>
+              <div className="text-sm md:text-base text-gray-300">موديلات أبواب WPC</div>
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
@@ -170,8 +170,8 @@ export default function HomeSections() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-gold mb-2">5000+</div>
-              <div className="text-sm md:text-base text-gray-300">باب تم تركيبه</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold mb-2">الخدمات</div>
+              <div className="text-sm md:text-base text-gray-300">توريد وتركيب وتصميم خاص</div>
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
@@ -179,8 +179,8 @@ export default function HomeSections() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-gold mb-2">350+</div>
-              <div className="text-sm md:text-base text-gray-300">مشروع ناجح</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold mb-2">المشاريع</div>
+              <div className="text-sm md:text-base text-gray-300">نماذج معروضة في الموقع</div>
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
@@ -188,8 +188,8 @@ export default function HomeSections() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-gold mb-2">100%</div>
-              <div className="text-sm md:text-base text-gray-300">رضا العملاء</div>
+              <div className="text-2xl md:text-3xl font-bold text-gold mb-2">التواصل</div>
+              <div className="text-sm md:text-base text-gray-300">اطلب عرض سعر لمشروعك</div>
             </motion.div>
           </div>
         </div>

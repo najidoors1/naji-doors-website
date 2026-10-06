@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products } from "@/data/content";
 import { CheckCircle2, ChevronRight, MessageCircle } from "lucide-react";
+import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -21,10 +22,12 @@ export async function generateMetadata(
     };
   }
 
-  return {
-    title: `${product.name} | ناجي دورز`,
+  return pageMetadata({
+    title: product.name,
     description: product.description,
-  };
+    path: `/products/${product.slug}`,
+    image: product.image,
+  });
 }
 
 export default async function ProductDetailsPage({ params }: Props) {
@@ -143,32 +146,27 @@ export default async function ProductDetailsPage({ params }: Props) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Product",
-            "name": product.name,
-            "image": [
-              `https://najidoor.com${product.image}`
-            ],
-            "description": product.description,
-            "sku": product.id,
-            "category": product.category,
-            "brand": {
-              "@type": "Brand",
-              "name": "Naji Doors"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "89"
-            },
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "SAR",
-              "availability": "https://schema.org/InStock",
-              "seller": {
-                "@type": "Organization",
-                "name": "مؤسسة ناجي دورز للأبواب"
-              }
-            }
+            "@graph": [
+              {
+                "@type": "Product",
+                "@id": `https://najidoor.com/products/${product.slug}#product`,
+                "name": product.name,
+                "url": `https://najidoor.com/products/${product.slug}`,
+                "image": [`https://najidoor.com${product.image}`],
+                "description": product.description,
+                "sku": product.id,
+                "category": product.category,
+                "brand": {
+                  "@type": "Brand",
+                  "name": "NAJI DOORS"
+                }
+              },
+              breadcrumbSchema([
+                { name: "الرئيسية", path: "/" },
+                { name: "المنتجات", path: "/products" },
+                { name: product.name, path: `/products/${product.slug}` },
+              ]),
+            ]
           })
         }}
       />

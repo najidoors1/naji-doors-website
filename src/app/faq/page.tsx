@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Script from "next/script";
+import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 
 const faqs = [
@@ -98,6 +99,21 @@ export default function FAQPage() {
             </div>
           ))}
         </div>
+
+        <section className="mt-12 grid gap-5 md:grid-cols-3">
+          <Link href="/products" className="rounded-2xl bg-white p-6 shadow-sm transition-colors hover:bg-light-cream">
+            <h2 className="text-xl font-bold text-deep-brown">شاهد الموديلات</h2>
+            <p className="mt-3 text-sm leading-relaxed text-gray-600">انتقل إلى الكتالوج لمقارنة التصاميم والتشطيبات المعروضة.</p>
+          </Link>
+          <Link href="/services" className="rounded-2xl bg-white p-6 shadow-sm transition-colors hover:bg-light-cream">
+            <h2 className="text-xl font-bold text-deep-brown">حدد الخدمة</h2>
+            <p className="mt-3 text-sm leading-relaxed text-gray-600">تعرف على التوريد والتركيب وخدمة المشاريع والتصميم الخاص.</p>
+          </Link>
+          <Link href="/contact" className="rounded-2xl bg-white p-6 shadow-sm transition-colors hover:bg-light-cream">
+            <h2 className="text-xl font-bold text-deep-brown">اطلب عرض سعر</h2>
+            <p className="mt-3 text-sm leading-relaxed text-gray-600">شارك نوع المشروع والمقاسات والكمية لتناقش الطلب بصورة أدق.</p>
+          </Link>
+        </section>
       </div>
 
     </main>

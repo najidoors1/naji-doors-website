@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { products } from "@/data/content";
 import { CheckCircle2, ChevronRight, MessageCircle } from "lucide-react";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import RelatedLinks from "@/components/ui/RelatedLinks";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -138,6 +139,28 @@ export default async function ProductDetailsPage({ params }: Props) {
 
           </div>
         </div>
+
+        <section className="mt-10 grid gap-6 rounded-3xl bg-white p-7 md:grid-cols-2 md:p-10">
+          <div>
+            <h2 className="text-2xl font-bold text-deep-brown">قبل اعتماد هذا الموديل</h2>
+            <p className="mt-4 leading-relaxed text-gray-700">تأكد من أن التصميم مناسب لاستخدام الغرفة، ثم راجع المقاس واتجاه الفتح ولون الإطار والإكسسوارات. قد تختلف التفاصيل المناسبة من فتحة إلى أخرى حتى داخل المنزل نفسه.</p>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-deep-brown">ما الذي يفيد في طلب العرض؟</h2>
+            <p className="mt-4 leading-relaxed text-gray-700">أرسل اسم الموديل أو صورته، وعدد الأبواب والمقاسات التقريبية، مع موقع المشروع ونوع الخدمة المطلوبة. بهذه المعلومات يمكن مناقشة الطلب بصورة أكثر دقة.</p>
+          </div>
+        </section>
+
+        <RelatedLinks
+          className="mt-10"
+          title={`روابط مرتبطة بـ ${product.name}`}
+          description="انتقل إلى الصفحات التي تساعدك على تحويل اختيار الموديل إلى طلب مكتمل التفاصيل."
+          links={[
+            { href: "/products", title: "كل الموديلات", description: "قارن هذا التصميم ببدائل أخرى في الكتالوج." },
+            { href: "/services/installation", title: "خدمة التركيب", description: "راجع ما يرتبط بالموقع والإطار قبل ترتيب الخدمة." },
+            { href: "/contact", title: "طلب عرض سعر", description: "أرسل الموديل والمقاسات والكمية." },
+          ]}
+        />
       </div>
 
       {/* JSON-LD Structured Data */}

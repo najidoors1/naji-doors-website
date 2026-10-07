@@ -97,6 +97,40 @@ export default function HomeSections() {
         </div>
       </section>
 
+      <section className="bg-white py-24">
+        <div className="container mx-auto px-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold text-deep-brown md:text-5xl">دليل سريع قبل طلب أبواب WPC</h2>
+            <p className="mt-6 text-lg leading-relaxed text-gray-700">
+              اختيار الباب الداخلي لا ينتهي عند التصميم. عندما تحدد نوع الاستخدام والمقاس والتشطيب والخدمة المطلوبة، يصبح التواصل أسرع ويكون عرض السعر مرتبطاً بما يحتاجه مشروعك فعلاً. استخدم الصفحات التالية لترتيب الخيارات خطوة بخطوة.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <Link href="/products" className="group rounded-3xl border border-gold/15 bg-warm-beige/60 p-8 transition-colors hover:bg-light-cream">
+              <span className="text-sm font-bold text-gold">الخطوة الأولى</span>
+              <h3 className="mt-3 text-2xl font-bold text-deep-brown">قارن الموديلات</h3>
+              <p className="mt-4 leading-relaxed text-gray-600">شاهد التصاميم السادة والمحـفورة والزجاجية والاستيل والسحاب، واختر ما ينسجم مع المكان.</p>
+              <span className="mt-6 inline-flex items-center gap-2 font-bold text-gold group-hover:text-deep-brown">استعرض الكتالوج <ArrowLeft className="h-4 w-4" /></span>
+            </Link>
+            <Link href="/advantages" className="group rounded-3xl border border-gold/15 bg-warm-beige/60 p-8 transition-colors hover:bg-light-cream">
+              <span className="text-sm font-bold text-gold">الخطوة الثانية</span>
+              <h3 className="mt-3 text-2xl font-bold text-deep-brown">راجع التفاصيل المهمة</h3>
+              <p className="mt-4 leading-relaxed text-gray-600">تعرف على ما ينبغي مراجعته في الباب والإطار والإكسسوارات والموقع قبل تثبيت الاختيار.</p>
+              <span className="mt-6 inline-flex items-center gap-2 font-bold text-gold group-hover:text-deep-brown">اقرأ دليل الاختيار <ArrowLeft className="h-4 w-4" /></span>
+            </Link>
+            <Link href="/contact" className="group rounded-3xl border border-gold/15 bg-warm-beige/60 p-8 transition-colors hover:bg-light-cream">
+              <span className="text-sm font-bold text-gold">الخطوة الثالثة</span>
+              <h3 className="mt-3 text-2xl font-bold text-deep-brown">شارك تفاصيل المشروع</h3>
+              <p className="mt-4 leading-relaxed text-gray-600">أرسل العدد والمقاسات والتصميم وموقع المشروع لتناقش خدمة التوريد أو التركيب المناسبة.</p>
+              <span className="mt-6 inline-flex items-center gap-2 font-bold text-gold group-hover:text-deep-brown">اطلب عرض سعر <ArrowLeft className="h-4 w-4" /></span>
+            </Link>
+          </div>
+          <p className="mx-auto mt-10 max-w-4xl text-center leading-relaxed text-gray-600">
+            إذا كان مشروعك في الرياض، يمكنك أيضاً الانتقال إلى <Link href="/districts" className="font-bold text-gold hover:text-deep-brown">دليل الأحياء</Link> للبدء من موقع المشروع، أو إلى <Link href="/projects" className="font-bold text-gold hover:text-deep-brown">صفحة المشاريع</Link> لترتيب المعلومات المهمة للطلبات الأكبر.
+          </p>
+        </div>
+      </section>
+
       {/* 2. Featured Showcase Parallax */}
       <section className="py-24 bg-white relative">
         <div className="container mx-auto px-6">

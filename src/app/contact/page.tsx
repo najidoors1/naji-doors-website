@@ -4,6 +4,7 @@ import PageHero from "@/components/ui/PageHero";
 import { MapPin, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
+import RelatedLinks from "@/components/ui/RelatedLinks";
 
 export const metadata: Metadata = pageMetadata({
   title: "طلب عرض سعر أبواب WPC في الرياض",
@@ -168,6 +169,32 @@ export default function ContactPage() {
           </div>
 
         </div>
+
+        <section className="mt-12 grid gap-6 md:grid-cols-3">
+          <article className="rounded-2xl border border-gold/15 bg-white p-7">
+            <h2 className="text-xl font-bold text-deep-brown">لطلب باب أو أكثر</h2>
+            <p className="mt-3 leading-relaxed text-gray-600">أرسل الموديل الذي لفت نظرك، مع عدد الأبواب والمقاسات التقريبية وصور المكان إن كانت مفيدة.</p>
+          </article>
+          <article className="rounded-2xl border border-gold/15 bg-white p-7">
+            <h2 className="text-xl font-bold text-deep-brown">للفلل والمنازل</h2>
+            <p className="mt-3 leading-relaxed text-gray-600">وضح الغرف التي يشملها الطلب، ولون الأرضيات أو الديكور، ونوع الخدمة التي تتوقعها في الموقع.</p>
+          </article>
+          <article className="rounded-2xl border border-gold/15 bg-white p-7">
+            <h2 className="text-xl font-bold text-deep-brown">للمشاريع</h2>
+            <p className="mt-3 leading-relaxed text-gray-600">جهّز جدولاً بعدد الأبواب والمقاسات والموديلات المرغوبة وموقع المشروع والجدول الزمني المتاح.</p>
+          </article>
+        </section>
+
+        <RelatedLinks
+          className="mt-10"
+          title="راجع هذه الصفحات قبل إرسال طلبك"
+          description="كلما كانت معلومات الاختيار أوضح، أمكن مناقشة العرض والخدمة المناسبة لمشروعك بصورة أفضل."
+          links={[
+            { href: "/products", title: "كتالوج الأبواب", description: "اختر الموديلات التي تريد الاستفسار عنها." },
+            { href: "/services", title: "الخدمات", description: "حدد التوريد أو التركيب أو خدمة المشاريع." },
+            { href: "/districts", title: "أحياء الرياض", description: "ابدأ من صفحة موقع مشروعك داخل الرياض." },
+          ]}
+        />
       </div>
     </main>
   );

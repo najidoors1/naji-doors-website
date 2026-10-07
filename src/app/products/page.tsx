@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/content";
 import PageHero from "@/components/ui/PageHero";
+import RelatedLinks from "@/components/ui/RelatedLinks";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -13,11 +14,13 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function ProductsPage() {
+  const categories = Array.from(new Set(products.map((product) => product.category)));
+
   return (
     <main className="min-h-screen bg-warm-beige pb-24">
       <PageHero 
-        title="كتالوج المنتجات"
-        description="اكتشف تشكيلة أبواب ناجي دورز التي تجمع بين الأناقة الفائقة والأداء الاستثنائي."
+        title="كتالوج أبواب WPC"
+        description="استعرض الموديلات والتشطيبات، ثم راجع المقاس والإطار والإكسسوارات وخدمة التركيب قبل اعتماد طلبك."
         bgImage="/Images/wpc-doors-riyadh-products-hero.png"
         breadcrumbs={[{ name: "المنتجات", href: "/products" }]}
       />
@@ -55,6 +58,52 @@ export default function ProductsPage() {
             </Link>
           ))}
         </div>
+
+        <section className="mt-20 grid gap-10 rounded-3xl bg-white p-8 md:grid-cols-[1.1fr_0.9fr] md:p-12">
+          <div>
+            <h2 className="text-3xl font-bold text-deep-brown">كيف تستخدم الكتالوج لاختيار الباب المناسب؟</h2>
+            <p className="mt-5 text-lg leading-relaxed text-gray-700">
+              الصور نقطة بداية مفيدة، لكنها لا تكفي وحدها لاتخاذ القرار. ابدأ بتحديد الاستخدام في كل غرفة، ثم قارن النمط الذي يناسب الديكور: سادة للمساحات الهادئة، أو محفور لمن يريد تفاصيل أوضح، أو زجاجي واستيل وسحاب عندما يخدم ذلك تصميم المكان وطريقة الحركة فيه.
+            </p>
+            <p className="mt-4 leading-relaxed text-gray-700">
+              بعد اختيار الموديل المفضل، دوّن المقاسات التقريبية واتجاه الفتح واللون المطلوب. هذه المعلومات تساعدنا على مناقشة الإطار والإكسسوارات وخدمة التوريد أو التركيب بصورة أدق، بدلاً من تقديم عرض عام لا يراعي مشروعك.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-light-cream p-7">
+            <h3 className="text-xl font-bold text-deep-brown">أنماط متاحة للمقارنة</h3>
+            <ul className="mt-5 space-y-3 text-gray-700">
+              {categories.map((category) => (
+                <li key={category} className="border-b border-gold/15 pb-3 last:border-0">{category}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="mt-10 grid gap-6 md:grid-cols-3">
+          <article className="rounded-2xl border border-gold/15 bg-white p-6">
+            <h2 className="text-xl font-bold text-deep-brown">المقاس أولاً</h2>
+            <p className="mt-3 leading-relaxed text-gray-600">تحقق من أبعاد الفتحة القائمة أو المخطط قبل ربطها بأي موديل، خصوصاً عند وجود أكثر من نوع من الغرف.</p>
+          </article>
+          <article className="rounded-2xl border border-gold/15 bg-white p-6">
+            <h2 className="text-xl font-bold text-deep-brown">التشطيب جزء من الاختيار</h2>
+            <p className="mt-3 leading-relaxed text-gray-600">قارن اللون مع الأرضية والجدران والإضاءة، وراجع لون الإطار والإكسسوارات كجزء من النتيجة النهائية.</p>
+          </article>
+          <article className="rounded-2xl border border-gold/15 bg-white p-6">
+            <h2 className="text-xl font-bold text-deep-brown">الخدمة بعد الاختيار</h2>
+            <p className="mt-3 leading-relaxed text-gray-600">حدد إن كان طلبك توريداً فقط أو يحتاج تنسيقاً للتركيب، ثم أرسل عدد الأبواب وموقع المشروع للحصول على متابعة مناسبة.</p>
+          </article>
+        </section>
+
+        <RelatedLinks
+          className="mt-10"
+          title="من الموديل إلى طلب العرض"
+          description="اربط اختيارك من الكتالوج بالخدمة المطلوبة وبالمعلومات التي تجعل عرض السعر مناسباً لمشروعك."
+          links={[
+            { href: "/services", title: "خدماتنا", description: "تعرف على التوريد والتركيب والتصميم الخاص والمشاريع." },
+            { href: "/advantages", title: "دليل اختيار أبواب WPC", description: "راجع الجوانب التي ينبغي تقييمها قبل الشراء." },
+            { href: "/contact", title: "طلب عرض سعر", description: "أرسل المقاسات والكمية والتصميم المطلوب." },
+          ]}
+        />
       </div>
     </main>
   );

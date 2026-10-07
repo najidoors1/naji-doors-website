@@ -6,6 +6,7 @@ import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import { Calendar, MapPin, User, CheckCircle2 } from "lucide-react";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import RelatedLinks from "@/components/ui/RelatedLinks";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -132,6 +133,17 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
             </div>
           </div>
         </div>
+
+        <RelatedLinks
+          className="mt-12"
+          title="هل لديك مشروع مشابه؟"
+          description="استخدم هذا النموذج كمرجع لتجهيز بيانات مشروعك، ثم انتقل إلى الموديلات والخدمات قبل طلب العرض."
+          links={[
+            { href: "/products", title: "اختيار الموديلات", description: "استعرض الأبواب التي تناسب اتجاه التصميم." },
+            { href: "/services/b2b-projects", title: "خدمة المشاريع", description: "تعرف على قائمة البيانات المفيدة للمشاريع متعددة الأبواب." },
+            { href: "/contact", title: "اطلب عرض مشروع", description: "أرسل الكمية والمقاسات والموقع ونطاق الخدمة." },
+          ]}
+        />
       </div>
       <script
         type="application/ld+json"

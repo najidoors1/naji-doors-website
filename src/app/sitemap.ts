@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
-import { products, companyData, projectsData } from "@/data/content";
+import { products, projectsData } from "@/data/content";
 import { blogPosts } from "@/data/blog";
+import { districts } from "@/data/districts";
+import { services } from "@/data/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://najidoor.com";
@@ -17,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/downloads`, changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${baseUrl}/contact`, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/partners`, changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${baseUrl}/districts`, changeFrequency: "monthly" as const, priority: 0.7 },
   ];
 
   const productPages = products.map((product) => ({
@@ -31,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const servicePages = companyData.services.map((service) => ({
+  const servicePages = services.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.8,
@@ -43,5 +46,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...productPages, ...blogPages, ...servicePages, ...projectPages];
+  const districtPages = districts.map((district) => ({
+    url: `${baseUrl}/districts/${district.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...productPages, ...blogPages, ...servicePages, ...projectPages, ...districtPages];
 }

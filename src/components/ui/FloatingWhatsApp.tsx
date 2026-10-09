@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { ClipboardPenLine } from "lucide-react";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg className={className} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
@@ -29,8 +30,16 @@ export default function FloatingWhatsApp({ initialHidden = false }: { initialHid
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.5, delay: 2 }}
-      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40"
+      className="fixed bottom-24 right-4 z-40 flex flex-col items-end gap-3 md:bottom-6 md:right-6"
     >
+      <Link
+        href="/contact"
+        className="group flex h-12 items-center gap-2 rounded-full border border-gold/40 bg-deep-brown px-4 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-deep-brown hover:shadow-2xl md:h-14 md:px-5 md:text-base"
+        aria-label="طلب عرض سعر"
+      >
+        <ClipboardPenLine className="h-5 w-5" />
+        <span>طلب عرض سعر</span>
+      </Link>
       <Link
         href="https://wa.me/966575650214?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%A8%D9%88%D8%A7%D8%A8%20WPC%20%D9%85%D9%86%20%D9%86%D8%A7%D8%AC%D9%8A%20%D8%AF%D9%88%D8%B1%D8%B2"
         target="_blank"
@@ -38,11 +47,9 @@ export default function FloatingWhatsApp({ initialHidden = false }: { initialHid
         className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-green-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 relative group"
       >
         <WhatsAppIcon className="w-6 h-6 md:w-8 md:h-8" />
-        {/* Tooltip */}
         <span className="absolute right-full mr-4 bg-white text-deep-brown px-4 py-2 rounded-lg text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
           تواصل معنا عبر واتساب
         </span>
-        {/* Ping animation */}
         <span className="absolute inset-0 rounded-full border-2 border-green-400 animate-ping opacity-75"></span>
       </Link>
     </motion.div>

@@ -2,20 +2,9 @@
 
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
 import { useForm as useHookForm } from "react-hook-form";
-
-const quoteSchema = z.object({
-  name: z.string().min(2, { message: "الاسم يجب أن يحتوي على حرفين على الأقل" }),
-  phone: z.string().regex(/^(05)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/, { message: "رقم الجوال غير صحيح (يجب أن يبدأ بـ 05)" }),
-  projectType: z.string().min(1, { message: "الرجاء اختيار نوع المشروع" }),
-  quantity: z.string().min(1, { message: "الرجاء إدخال الكمية التقريبية" }),
-  district: z.string().min(2, { message: "الرجاء إدخال الحي في الرياض" }),
-  details: z.string().optional(),
-});
-
-type QuoteFormValues = z.infer<typeof quoteSchema>;
+import { quoteSchema, type QuoteFormValues } from "@/lib/quote";
 
 export default function QuoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,7 +26,7 @@ export default function QuoteForm() {
     setSubmitError("");
     
     try {
-      const response = await fetch("https://formspree.io/f/xlgqyprn", {
+      const response = await fetch("/api/quote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,10 +37,10 @@ export default function QuoteForm() {
       if (response.ok) {
         setIsSuccess(true);
         reset();
-        // Reset success message after 5 seconds
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        setSubmitError("حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.");
+        const result = await response.json().catch(() => null);
+        setSubmitError(result?.message || "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.");
       }
     } catch {
       setSubmitError("حدث خطأ في الاتصال. يرجى التأكد من اتصالك بالإنترنت.");
@@ -153,6 +142,15 @@ export default function QuoteForm() {
               placeholder="أضف أي تفاصيل أخرى ترغب في مشاركتها..."
             ></textarea>
           </div>
+
+          <input
+            {...register("website")}
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="hidden"
+          />
 
           {submitError && (
             <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm font-medium text-center">

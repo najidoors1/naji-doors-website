@@ -1,4 +1,4 @@
-import { google } from "googleapis";
+import { google, type sheets_v4 } from "googleapis";
 
 const QUOTE_SHEET_NAME = "طلبات عرض السعر";
 const QUOTE_HEADERS = [
@@ -14,6 +14,9 @@ const QUOTE_HEADERS = [
 ];
 
 const GOOGLE_SHEETS_SCOPE = "https://www.googleapis.com/auth/spreadsheets";
+const HEADER_BACKGROUND = { red: 0.94, green: 0.82, blue: 0.53 };
+const HEADER_FOREGROUND = { red: 0.173, green: 0.141, blue: 0.106 };
+const NEW_STATUS_BACKGROUND = { red: 1, green: 0.91, blue: 0.66 };
 
 type ServiceAccountCredentials = {
   client_email?: unknown;
@@ -88,7 +91,7 @@ async function getOrCreateQuoteSheet() {
   )?.properties;
 
   if (typeof existingSheet?.sheetId === "number") {
-    return { sheets, spreadsheetId, sheetId: existingSheet.sheetId };
+    return { sheets, spreadsheetId, sheetId: existingSheet.sheetId, wasCreated: false };
   }
 
   const createdSheet = await sheets.spreadsheets.batchUpdate({
@@ -114,100 +117,104 @@ async function getOrCreateQuoteSheet() {
     throw new Error("Google Sheets did not return the new quote sheet ID.");
   }
 
-  return { sheets, spreadsheetId, sheetId };
+  return { sheets, spreadsheetId, sheetId, wasCreated: true };
 }
 
 async function ensureQuoteSheetHeaders() {
-  const { sheets, spreadsheetId, sheetId } = await getOrCreateQuoteSheet();
+  const { sheets, spreadsheetId, sheetId, wasCreated } = await getOrCreateQuoteSheet();
   const existingHeaders = await sheets.spreadsheets.values.get({
     spreadsheetId,
     range: quoteRange("A1:I1"),
   });
+  const hasHeaders = Boolean(existingHeaders.data.values?.[0]?.some(Boolean));
 
-  if (existingHeaders.data.values?.[0]?.some(Boolean)) {
-    return { sheets, spreadsheetId };
+  if (!hasHeaders) {
+    await sheets.spreadsheets.values.update({
+      spreadsheetId,
+      range: quoteRange("A1:I1"),
+      valueInputOption: "RAW",
+      requestBody: { values: [QUOTE_HEADERS] },
+    });
   }
 
-  await sheets.spreadsheets.values.update({
-    spreadsheetId,
-    range: quoteRange("A1:I1"),
-    valueInputOption: "RAW",
-    requestBody: { values: [QUOTE_HEADERS] },
-  });
+  const requests: sheets_v4.Schema$Request[] = [
+    {
+      updateSheetProperties: {
+        properties: {
+          sheetId,
+          rightToLeft: true,
+          gridProperties: { frozenRowCount: 1 },
+        },
+        fields: "rightToLeft,gridProperties.frozenRowCount",
+      },
+    },
+    {
+      repeatCell: {
+        range: {
+          sheetId,
+          startRowIndex: 0,
+          endRowIndex: 1,
+          startColumnIndex: 0,
+          endColumnIndex: QUOTE_HEADERS.length,
+        },
+        cell: {
+          userEnteredFormat: {
+            backgroundColor: HEADER_BACKGROUND,
+            horizontalAlignment: "CENTER",
+            textFormat: {
+              bold: true,
+              foregroundColor: HEADER_FOREGROUND,
+            },
+          },
+        },
+        fields: "userEnteredFormat(backgroundColor,horizontalAlignment,textFormat)",
+      },
+    },
+  ];
+
+  if (wasCreated || !hasHeaders) {
+    requests.push(
+      {
+        autoResizeDimensions: {
+          dimensions: {
+            sheetId,
+            dimension: "COLUMNS",
+            startIndex: 0,
+            endIndex: QUOTE_HEADERS.length,
+          },
+        },
+      },
+      {
+        addConditionalFormatRule: {
+          index: 0,
+          rule: {
+            ranges: [
+              {
+                sheetId,
+                startRowIndex: 1,
+                startColumnIndex: QUOTE_HEADERS.length - 1,
+                endColumnIndex: QUOTE_HEADERS.length,
+              },
+            ],
+            booleanRule: {
+              condition: {
+                type: "TEXT_EQ",
+                values: [{ userEnteredValue: "جديد" }],
+              },
+              format: {
+                backgroundColor: NEW_STATUS_BACKGROUND,
+                textFormat: { bold: true, foregroundColor: HEADER_FOREGROUND },
+              },
+            },
+          },
+        },
+      }
+    );
+  }
 
   await sheets.spreadsheets.batchUpdate({
     spreadsheetId,
-    requestBody: {
-      requests: [
-        {
-          updateSheetProperties: {
-            properties: {
-              sheetId,
-              rightToLeft: true,
-              gridProperties: { frozenRowCount: 1 },
-            },
-            fields: "rightToLeft,gridProperties.frozenRowCount",
-          },
-        },
-        {
-          repeatCell: {
-            range: {
-              sheetId,
-              startRowIndex: 0,
-              endRowIndex: 1,
-              startColumnIndex: 0,
-              endColumnIndex: QUOTE_HEADERS.length,
-            },
-            cell: {
-              userEnteredFormat: {
-                backgroundColor: { red: 0.29, green: 0.208, blue: 0.165 },
-                horizontalAlignment: "CENTER",
-                textFormat: {
-                  bold: true,
-                  foregroundColor: { red: 1, green: 1, blue: 1 },
-                },
-              },
-            },
-            fields: "userEnteredFormat(backgroundColor,horizontalAlignment,textFormat)",
-          },
-        },
-        {
-          autoResizeDimensions: {
-            dimensions: {
-              sheetId,
-              dimension: "COLUMNS",
-              startIndex: 0,
-              endIndex: QUOTE_HEADERS.length,
-            },
-          },
-        },
-        {
-          addConditionalFormatRule: {
-            index: 0,
-            rule: {
-              ranges: [
-                {
-                  sheetId,
-                  startRowIndex: 1,
-                  startColumnIndex: QUOTE_HEADERS.length - 1,
-                  endColumnIndex: QUOTE_HEADERS.length,
-                },
-              ],
-              booleanRule: {
-                condition: {
-                  type: "TEXT_EQ",
-                  values: [{ userEnteredValue: "جديد" }],
-                },
-                format: {
-                  backgroundColor: { red: 0.957, green: 0.835, blue: 0.553 },
-                  textFormat: { bold: true, foregroundColor: { red: 0.29, green: 0.208, blue: 0.165 } },
-                },
-              },
-            },
-          },
-        },
-      ],
-    },
+    requestBody: { requests },
   });
 
   return { sheets, spreadsheetId };

@@ -34,7 +34,7 @@ export default function FloatingWhatsApp({ initialHidden = false }: { initialHid
     >
       <Link
         href="/contact"
-        className="group flex h-12 items-center gap-2 rounded-full border border-gold/40 bg-deep-brown px-4 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-deep-brown hover:shadow-2xl md:h-14 md:px-5 md:text-base"
+        className="group flex h-12 items-center gap-2 rounded-full border border-gold/70 bg-gold px-4 text-sm font-bold text-deep-brown shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-natural-wood hover:bg-[#d5b16a] hover:shadow-2xl md:h-14 md:px-5 md:text-base"
         aria-label="طلب عرض سعر"
       >
         <ClipboardPenLine className="h-5 w-5" />

@@ -1,52 +1,58 @@
-# ربط طلبات عرض السعر بـ Google Sheets
+# ربط طلبات عرض السعر بـ Google Sheets API
 
-تم تجهيز الموقع لإرسال كل طلب إلى صفحة باسم **طلبات عرض السعر** داخل ملف Google Sheets. الإعداد يتم مرة واحدة فقط ولا يحتاج إلى إضافة رابط Google Sheets في واجهة الموقع.
+يستخدم الموقع Google Sheets API عبر **Service Account**. لا نحتاج Google Apps Script أو رابط Web App. تُنشأ ورقة **طلبات عرض السعر** وتنسيقها تلقائياً عند أول طلب، وتصل حالة كل طلب جديد بقيمة **جديد**.
 
-## 1. الملف المستهدف
+## 1. فعّل Google Sheets API
 
-سيُحفظ كل طلب في الملف الذي شاركته بالفعل. قيمة `SPREADSHEET_ID` هي:
+1. افتح [Google Cloud Console](https://console.cloud.google.com/).
+2. أنشئ مشروعاً جديداً أو اختر مشروعاً موجوداً خاصاً بناجي دورز.
+3. من **APIs & Services → Library** ابحث عن **Google Sheets API** ثم اختر **Enable**.
+
+## 2. أنشئ Service Account
+
+1. من **IAM & Admin → Service Accounts** اختر **Create service account**.
+2. الاسم المقترح: `naji-doors-quotes`.
+3. لا تحتاج إلى إعطاءه دوراً على مستوى مشروع Google Cloud. اختر **Done**.
+4. افتح الـ Service Account الذي أنشأته، ثم تبويب **Keys**.
+5. اختر **Add key → Create new key → JSON** ثم أنشئ المفتاح ونزّل ملف JSON.
+
+احتفظ بالملف في مكان آمن. لا ترفعه إلى GitHub ولا ترسله في المحادثة.
+
+## 3. امنح Service Account حق الوصول إلى الملف
+
+1. انسخ البريد الإلكتروني للـ Service Account. ينتهي عادةً بـ `iam.gserviceaccount.com`.
+2. افتح ملف Google Sheets الخاص بناجي دورز واختر **Share**.
+3. أضف هذا البريد بصلاحية **Editor**.
+
+قيمة معرّف الملف المستخدمة في الموقع هي:
 
 ```text
 18ZtF5V6OQmagYXOYSbTJDQWLK_IJP8afvmD0SCHF1gE
 ```
 
-لا حاجة لإنشاء ملف جديد. ينشئ السكربت تبويباً منفصلاً باسم **طلبات عرض السعر** تلقائياً عند وصول أول طلب.
+## 4. أضف متغيرات Vercel السرية
 
-## 2. أنشئ Web App في Google Apps Script
+من **Vercel → Project → Settings → Environment Variables** أضف القيم التالية إلى بيئة **Production**:
 
-من داخل ملف Google Sheets اختر **Extensions → Apps Script**. احذف المحتوى الافتراضي، ثم الصق محتوى الملف `google-apps-script/Code.gs` الموجود في المشروع.
-
-من إعدادات المشروع افتح **Script properties** وأضف القيمتين التاليتين:
-
-| المفتاح | القيمة |
+| الاسم | القيمة |
 | --- | --- |
-| `SPREADSHEET_ID` | `18ZtF5V6OQmagYXOYSbTJDQWLK_IJP8afvmD0SCHF1gE` |
-| `WEBHOOK_TOKEN` | رمز سري طويل وعشوائي؛ احتفظ به لتضيفه إلى بيئة استضافة الموقع |
+| `GOOGLE_SHEETS_SPREADSHEET_ID` | `18ZtF5V6OQmagYXOYSbTJDQWLK_IJP8afvmD0SCHF1gE` |
+| `GOOGLE_SHEETS_SERVICE_ACCOUNT_JSON` | محتوى ملف JSON الذي نزّلته كاملاً، من أول `{` إلى آخر `}` |
 
-## 3. انشر السكربت
+استخدم محتوى ملف JSON كما هو، ولا تحوّله إلى لقطة شاشة أو تضعه داخل ملفات المشروع. لا تضف بادئة `NEXT_PUBLIC_` إلى أي متغير.
 
-اختر **Deploy → New deployment → Web app**، ثم:
+بعد الحفظ، أعد نشر آخر نسخة من الموقع في Vercel.
 
-- Execute as: **Me**
-- Who has access: **Anyone**
+## 5. الاختبار
 
-انسخ رابط Web app الذي ينتهي بـ `/exec`.
-
-## 4. أضف المتغيرات السرية إلى استضافة الموقع
-
-أضف القيم التالية في إعدادات البيئة لدى الاستضافة، ثم أعد النشر:
-
-```text
-GOOGLE_SHEETS_WEBHOOK_URL=<رابط Web app المنتهي بـ /exec>
-GOOGLE_SHEETS_WEBHOOK_TOKEN=<نفس WEBHOOK_TOKEN في Script properties>
-```
-
-لا تضع الرمز السري في كود الموقع أو في `NEXT_PUBLIC_`، ولا تشاركه في رابط عام.
-
-## 5. اختبر الربط
-
-افتح الموقع، أرسل طلباً تجريبياً من نموذج «طلب تسعيرة»، ثم راجع ورقة **طلبات عرض السعر**. ستظهر الأعمدة تلقائياً عند أول طلب:
+أرسل طلباً تجريبياً من صفحة **طلب تسعيرة**. سيُنشئ الموقع تبويباً باسم **طلبات عرض السعر** عند الحاجة، ثم يضيف الأعمدة:
 
 `تاريخ الطلب، الاسم، رقم الجوال، نوع المشروع، الكمية التقريبية، الحي، تفاصيل إضافية، صفحة المصدر، الحالة`.
 
-إذا ظهر للمستخدم تنبيه بأن خدمة الطلبات غير مهيأة، فغالباً لم تُضف متغيرات البيئة أو لم يُعد نشر الموقع بعد إضافتها.
+ستظهر قيمة الحالة **جديد** تلقائياً.
+
+## معالجة المشاكل الشائعة
+
+- خطأ `403`: افتح مشاركة ملف Google Sheets وتأكد من أن بريد الـ Service Account لديه صلاحية **Editor**.
+- خطأ `Google Sheets API has not been used`: فعّل **Google Sheets API** للمشروع نفسه الذي أنشأت فيه الـ Service Account.
+- رسالة أن الخدمة غير مهيأة: تحقق من إضافة متغيري Vercel إلى بيئة Production ثم أعد النشر.

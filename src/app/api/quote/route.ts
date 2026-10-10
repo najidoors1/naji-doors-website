@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { appendQuoteRequest, GoogleSheetsConfigurationError } from "@/lib/google-sheets";
 import { projectTypeLabels, quoteSchema } from "@/lib/quote";
 
 export const runtime = "nodejs";
@@ -55,48 +56,31 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true });
   }
 
-  const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
-  const webhookToken = process.env.GOOGLE_SHEETS_WEBHOOK_TOKEN;
-
-  if (!webhookUrl || !webhookToken) {
-    console.error("Google Sheets quote webhook is not configured.");
-    return NextResponse.json(
-      { message: "خدمة طلبات الأسعار غير مهيأة حالياً. يرجى التواصل معنا عبر واتساب." },
-      { status: 503 }
-    );
-  }
-
   const { name, phone, projectType, quantity, district, details } = parsed.data;
 
   try {
-    const response = await fetch(webhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        token: webhookToken,
-        submittedAt: new Date().toISOString(),
-        name,
-        phone,
-        quantity,
-        district,
-        details,
-        projectType: projectTypeLabels[projectType] || projectType,
-        sourcePage: request.headers.get("referer") || "",
-        status: "جديد",
-      }),
-      cache: "no-store",
-      signal: AbortSignal.timeout(10000),
+    await appendQuoteRequest({
+      submittedAt: new Date().toISOString(),
+      name,
+      phone,
+      quantity,
+      district,
+      details,
+      projectType: projectTypeLabels[projectType] || projectType,
+      sourcePage: request.headers.get("referer") || "",
     });
-
-    const result = await response.json().catch(() => null);
-
-    if (!response.ok || !result?.success) {
-      throw new Error(`Google Sheets webhook returned ${response.status}`);
-    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Unable to send quote request to Google Sheets.", error);
+    if (error instanceof GoogleSheetsConfigurationError) {
+      console.error("Google Sheets API is not configured.", error);
+      return NextResponse.json(
+        { message: "خدمة طلبات الأسعار غير مهيأة حالياً. يرجى التواصل معنا عبر واتساب." },
+        { status: 503 }
+      );
+    }
+
+    console.error("Unable to save quote request to Google Sheets.", error);
     return NextResponse.json(
       { message: "تعذر إرسال الطلب الآن. يرجى المحاولة مرة أخرى أو التواصل معنا عبر واتساب." },
       { status: 502 }

@@ -89,8 +89,13 @@ export default function HomeSections() {
                 <h3 className="text-xl md:text-2xl font-bold text-deep-brown mb-2 group-hover:text-gold transition-colors">توريد أبواب WPC للمشاريع</h3>
                 <p className="text-gray-600">شارك عدد الأبواب والمقاسات والجدول المطلوب لنناقش احتياجات مشروعك.</p>
               </div>
-              <Link href="/projects" className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md group-hover:bg-gold group-hover:text-white transition-all transform group-hover:-translate-x-2">
-                <ArrowLeft className="w-6 h-6" />
+              <Link
+                href="/projects"
+                aria-label="استعرض نماذج مشاريع ناجي دورز"
+                className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md group-hover:bg-gold group-hover:text-white transition-all transform group-hover:-translate-x-2"
+              >
+                <ArrowLeft className="w-6 h-6" aria-hidden="true" />
+                <span className="sr-only">استعرض نماذج مشاريع ناجي دورز</span>
               </Link>
             </motion.div>
           </motion.div>

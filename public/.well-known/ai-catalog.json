@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ards-project/ard-spec/main/spec/schemas/ai-catalog.schema.json",
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "NAJI DOORS | ناجي دورز",
+    "documentationUrl": "https://najidoor.com/llms.txt",
+    "logoUrl": "https://najidoor.com/Images/Logo/Logo.png"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:najidoor.com:resource:website-guide",
+      "displayName": "NAJI DOORS website guide",
+      "type": "text/markdown",
+      "url": "https://najidoor.com/llms.txt",
+      "description": "Machine-readable guide to NAJI DOORS pages, WPC door services, and the customer-confirmed quote request journey.",
+      "tags": ["wpc-doors", "riyadh", "saudi-arabia", "interior-doors"],
+      "capabilities": ["WebsiteInformation", "QuoteRequestNavigation"],
+      "representativeQueries": [
+        "أين أجد موديلات أبواب WPC لدى ناجي دورز؟",
+        "كيف أطلب عرض سعر لأبواب WPC في الرياض؟"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-10-18T00:00:00Z"
+    }
+  ]
+}

@@ -102,6 +102,8 @@ export default async function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <head>
+        <link rel="ai-catalog" href="/ai-catalog.json" type="application/json" />
+        <link rel="alternate" href="/llms.txt" type="text/markdown" title="NAJI DOORS AI guide" />
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18144160950"></script>
         <script

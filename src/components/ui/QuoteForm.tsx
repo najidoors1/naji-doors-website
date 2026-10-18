@@ -63,7 +63,12 @@ export default function QuoteForm() {
           <p className="text-gray-600 text-center">شكراً لثقتك بناجي دورز، سنتواصل معك قريباً.</p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-6"
+          toolname="request_door_quote"
+          tooldescription="يساعد العميل على تعبئة طلب عرض سعر لأبواب WPC من ناجي دورز. يملأ الوكيل الحقول فقط؛ يجب أن يراجع العميل البيانات ويضغط زر الإرسال بنفسه."
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label htmlFor="quote-name" className="block text-sm font-medium text-gray-700">الاسم الكريم <span className="text-red-500">*</span></label>
@@ -73,6 +78,7 @@ export default function QuoteForm() {
                 type="text"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all"
                 placeholder="أدخل اسمك"
+                toolparamdescription="اسم الشخص الذي سيستقبل فريق ناجي دورز طلبه ويتواصل معه."
               />
               {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
             </div>
@@ -86,6 +92,7 @@ export default function QuoteForm() {
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all text-left"
                 placeholder="05XXXXXXXX"
                 dir="ltr"
+                toolparamdescription="رقم الجوال السعودي للتواصل بشأن عرض السعر."
               />
               {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
             </div>
@@ -98,6 +105,7 @@ export default function QuoteForm() {
                 {...register("projectType")}
                 id="quote-project-type"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all"
+                toolparamdescription="هل الطلب لمنزل أو فيلا، لمشروع تجاري، أو لاستخدام آخر."
               >
                 <option value="">اختر النوع</option>
                 <option value="residential">سكني (فيلا / قصر)</option>
@@ -115,6 +123,7 @@ export default function QuoteForm() {
                 type="number"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all"
                 placeholder="مثال: 15 باب"
+                toolparamdescription="عدد الأبواب التقريبي المطلوب لتجهيز عرض السعر."
               />
               {errors.quantity && <p className="text-red-500 text-sm mt-1">{errors.quantity.message}</p>}
             </div>
@@ -128,6 +137,7 @@ export default function QuoteForm() {
               type="text"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all"
               placeholder="مثال: الياسمين، الملقا، النرجس..."
+              toolparamdescription="الحي أو موقع المشروع داخل مدينة الرياض."
             />
             {errors.district && <p className="text-red-500 text-sm mt-1">{errors.district.message}</p>}
           </div>
@@ -140,6 +150,7 @@ export default function QuoteForm() {
               rows={4}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all resize-none"
               placeholder="أضف أي تفاصيل أخرى ترغب في مشاركتها..."
+              toolparamdescription="تفاصيل اختيارية مثل المقاسات أو الموديل أو موعد التركيب المطلوب."
             ></textarea>
           </div>
 

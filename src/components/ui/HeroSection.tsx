@@ -38,7 +38,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 md:mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-            استعرض أبواب WPC الداخلية للمنازل والفلل والمشاريع في الرياض، واختر التصميم والتشطيب المناسبين ثم اطلب عرض سعر حسب احتياجك.
+            استعرض أبواب WPC الداخلية للمنازل والفلل والمشاريع في الرياض، واختر التصميم والتشطيب المناسبين. ضمان يصل إلى 15 سنة على مقاومة الماء والحشرات وفق شروط الضمان.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -81,8 +81,8 @@ export default function HeroSection() {
              <span className="text-xs md:text-sm text-gray-300">نطاق الخدمة المعلن</span>
            </div>
            <div className="text-center">
-             <span className="block text-xl md:text-2xl font-bold text-white">عرض سعر</span>
-             <span className="text-xs md:text-sm text-gray-300">حسب متطلبات المشروع</span>
+             <span className="block text-xl md:text-2xl font-bold text-gold">15 سنة</span>
+             <span className="text-xs md:text-sm text-gray-300">ضمان على مقاومة الماء والحشرات</span>
            </div>
         </div>
       </motion.div>

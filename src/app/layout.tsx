@@ -23,10 +23,10 @@ const tajawal = Tajawal({
 export const metadata: Metadata = {
   metadataBase: new URL("https://najidoor.com"),
   title: {
-    default: "ناجي دورز | أبواب WPC في الرياض",
+    default: "ناجي دورز | أبواب WPC في الرياض بضمان يصل إلى 15 سنة",
     template: "%s | ناجي دورز",
   },
-  description: "ناجي دورز لعرض وتوريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع. استعرض الموديلات والخدمات واطلب عرض سعر حسب احتياجك.",
+  description: "ناجي دورز لعرض وتوريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع، مع ضمان يصل إلى 15 سنة على مقاومة الماء والحشرات وفق شروط الضمان. استعرض الموديلات واطلب عرض سعر.",
   keywords: [
     "أبواب WPC",
     "أبواب WPC الرياض",
@@ -61,8 +61,8 @@ export const metadata: Metadata = {
     locale: "ar_SA",
     url: "https://najidoor.com",
     siteName: "ناجي دورز | NAJI DOORS",
-    title: "ناجي دورز | أبواب WPC في الرياض",
-    description: "توريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع.",
+    title: "ناجي دورز | أبواب WPC في الرياض بضمان يصل إلى 15 سنة",
+    description: "توريد وتركيب أبواب WPC في الرياض مع ضمان يصل إلى 15 سنة على مقاومة الماء والحشرات وفق شروط الضمان.",
     images: [
       {
         url: "/Images/Logo/Logo.png",
@@ -74,8 +74,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ناجي دورز | أبواب WPC في الرياض",
-    description: "توريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع.",
+    title: "ناجي دورز | أبواب WPC في الرياض بضمان يصل إلى 15 سنة",
+    description: "توريد وتركيب أبواب WPC في الرياض مع ضمان يصل إلى 15 سنة على مقاومة الماء والحشرات وفق شروط الضمان.",
     images: ["/Images/Logo/Logo.png"],
   },
   robots: {
@@ -133,7 +133,7 @@ export default async function RootLayout({
                   url: "https://najidoor.com",
                   logo: "https://najidoor.com/Images/Logo/Logo.png",
                   image: "https://najidoor.com/Images/wpc-doors-riyadh-home-hero.png",
-                  description: "توريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع.",
+                  description: "توريد وتركيب أبواب WPC في الرياض للمنازل والفلل والمشاريع، مع ضمان يصل إلى 15 سنة على مقاومة الماء والحشرات وفق شروط الضمان.",
                   email: "najidoors.ksa@gmail.com",
                   telephone: "+966575650214",
                   address: {
